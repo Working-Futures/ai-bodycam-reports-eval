@@ -168,12 +168,12 @@ def run(urls, out_dir="outputs"):
             else:
                 print(f"[{idx}] cleaned transcript exists → skipping cleaning")
 
-            print(f"[{idx}] ✅ Done")
+            print(f"[{idx}] Done")
 
         except Exception:
             with errors_log.open("a") as f:
                 f.write(f"\n\n--- ERROR {idx} ---\nURL: {url}\n{traceback.format_exc()}")
-            print(f"[{idx}] ❌ Error (logged)")
+            print(f"[{idx}] Error (logged)")
 
 
 if __name__ == "__main__":
