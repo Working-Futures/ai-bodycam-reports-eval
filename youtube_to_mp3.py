@@ -33,4 +33,4 @@ def download_youtube_to_mp3(youtube_url, output_mp3_path):
     if os.path.exists(temp_mp4):
         os.remove(temp_mp4)
 
-    print(f"✅ Saved MP3 to: {output_mp3_path}")
+    print(f"Saved MP3 to: {output_mp3_path}")
