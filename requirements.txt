@@ -1,0 +1,13 @@
+whisperx
+torch
+numpy
+soundfile
+sentence-transformers
+jiwer
+yt-dlp
+ffmpeg-python
+transformers
+tokenizers
+tqdm
+accelerate
+python-dotenv
