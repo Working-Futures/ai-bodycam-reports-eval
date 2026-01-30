@@ -1,6 +1,6 @@
 <template>
-  <div class="border-b border-gray-200 pb-6 last:border-b-0">
-    <label class="block text-sm font-medium text-gray-700 mb-4">
+  <div>
+    <label class="block text-lg font-semibold text-gray-900 mb-6">
       {{ question }}
     </label>
     <div class="flex items-center justify-between space-x-4">

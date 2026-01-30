@@ -1,5 +1,5 @@
 <template>
-  <div class="space-y-8">
+  <div class="space-y-6">
     <!-- Welcome Section -->
     <div class="bg-white rounded-lg shadow p-6">
       <h2 class="text-2xl font-bold text-gray-900 mb-4">Welcome</h2>
@@ -13,15 +13,17 @@
 
     <!-- Video Embed -->
     <div class="bg-white rounded-lg shadow p-6">
-      <h3 class="text-xl font-semibold text-gray-900 mb-4">Video</h3>
-      <div class="aspect-video bg-black rounded-lg overflow-hidden">
-        <iframe
-          :src="embedUrl"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          class="w-full h-full"
-        ></iframe>
+      <h3 class="text-lg font-semibold text-gray-900 mb-3">Video</h3>
+      <div class="max-w-2xl mx-auto">
+        <div class="aspect-video bg-black rounded-lg overflow-hidden" style="max-height: 300px;">
+          <iframe
+            :src="embedUrl"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="w-full h-full"
+          ></iframe>
+        </div>
       </div>
     </div>
 
@@ -35,69 +37,187 @@
       </div>
     </div>
 
-    <!-- Likert Scale Questions -->
-    <div class="bg-white rounded-lg shadow p-6">
-      <h3 class="text-xl font-semibold text-gray-900 mb-6">Questions</h3>
-      <div class="space-y-6">
+    <!-- Likert Scale Questions Section -->
+    <div v-if="!showAtomicFacts" class="bg-white rounded-lg shadow p-6">
+      <div class="mb-4 flex items-center justify-between">
+        <h3 class="text-xl font-semibold text-gray-900">
+          Questions ({{ currentLikertIndex + 1 }} of {{ likertQuestions.length }})
+        </h3>
+        <div class="flex gap-2 items-center">
+          <button
+            v-if="currentLikertIndex > 0"
+            @click="goToPreviousLikert"
+            class="px-4 py-2 text-sm text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition"
+          >
+            ← Previous
+          </button>
+          <button
+            v-if="currentLikertIndex < likertQuestions.length - 1"
+            @click="goToNextLikert"
+            :disabled="!currentLikertAnswer"
+            class="px-4 py-2 text-sm text-white bg-blue-600 rounded-md hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition"
+          >
+            Next →
+          </button>
+          <button
+            v-else-if="allLikertAnswered"
+            @click="showAtomicFacts = true"
+            class="px-4 py-2 text-sm text-white bg-green-600 rounded-md hover:bg-green-700 transition"
+          >
+            Continue to Atomic Facts →
+          </button>
+          <label v-if="currentLikertIndex < likertQuestions.length - 1" class="flex items-center gap-2 ml-2 text-sm text-gray-600 cursor-pointer">
+            <input
+              type="checkbox"
+              v-model="autoAdvanceLikert"
+              class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            />
+            <span>Auto-advance</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Current Question -->
+      <div class="border-2 border-blue-200 rounded-lg p-6 bg-blue-50 mb-6">
         <LikertQuestion
-          v-for="(question, index) in likertQuestions"
-          :key="index"
-          :question="question"
-          :value="responses.likertQuestions?.[index]"
-          @update="(value) => updateLikertResponse(index, value)"
+          :question="likertQuestions[currentLikertIndex]"
+          :value="responses.likertQuestions?.[currentLikertIndex]"
+          @update="(value) => updateLikertResponse(currentLikertIndex, value)"
         />
+      </div>
+
+      <!-- Answered Questions (Collapsed) -->
+      <div v-if="answeredLikertQuestions.length > 0" class="space-y-2">
+        <div
+          v-for="(answered, idx) in answeredLikertQuestions"
+          :key="answered.index"
+          class="flex items-center justify-between p-3 bg-gray-50 rounded-md border border-gray-200 cursor-pointer hover:bg-gray-100 transition"
+          @click="goToLikertQuestion(answered.index)"
+        >
+          <div class="flex-1">
+            <p class="text-sm font-medium text-gray-700 line-clamp-1">
+              {{ answered.question }}
+            </p>
+            <p class="text-xs text-gray-500 mt-1">
+              Answer: {{ getAnswerLabel(answered.answer) }}
+            </p>
+          </div>
+          <button
+            class="ml-4 px-3 py-1 text-xs text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded transition"
+            @click.stop="goToLikertQuestion(answered.index)"
+          >
+            Edit
+          </button>
+        </div>
       </div>
     </div>
 
     <!-- Atomic Facts Section -->
-    <div class="bg-white rounded-lg shadow p-6">
-      <h3 class="text-xl font-semibold text-gray-900 mb-4">
-        Please read carefully before answering the questions below.
-      </h3>
-      <div class="prose max-w-none mb-6 text-gray-700">
-        <p class="mb-4">
-          You will be shown a set of atomic fact statements derived from a police report. 
-          For each atomic fact, indicate whether it is:
-        </p>
-        <ul class="list-disc pl-6 space-y-2 mb-4">
-          <li>
-            <strong>Accurate:</strong> The statement in its entirety is explicitly supported by the video you just watched. 
-            The fact appears clearly and unambiguously in the video.
-          </li>
-          <li>
-            <strong>Inaccurate:</strong> The statement contradicts the video, or the statement describes something that is clearly shown differently in the video.
-          </li>
-          <li>
-            <strong>Unsupported:</strong> The statement cannot be verified from the video. The video does not provide enough information to confirm or deny the statement.
-          </li>
-        </ul>
-        <p class="text-sm italic">
-          Important guidelines: Base your judgments only on what is visible or audible in the video. 
-          Do not make assumptions or inferences beyond the video. If the video does not clearly show or state the fact, 
-          select Unsupported. If placeholders appear in the statement (e.g., [INSERT: name]), treat them as written. 
-          Please use your best judgment and answer as accurately as possible. If you do not remember the relevant details, 
-          please watch the video while you are responding.
-        </p>
+    <div v-else class="bg-white rounded-lg shadow p-6">
+      <div class="mb-4 flex items-center justify-between">
+        <h3 class="text-xl font-semibold text-gray-900">
+          Atomic Facts ({{ currentAtomicIndex + 1 }} of {{ atomicFacts.length }})
+        </h3>
+        <div class="flex gap-2 items-center">
+          <button
+            @click="showAtomicFacts = false"
+            class="px-4 py-2 text-sm text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition"
+          >
+            ← Back to Questions
+          </button>
+          <button
+            v-if="currentAtomicIndex > 0"
+            @click="goToPreviousAtomic"
+            class="px-4 py-2 text-sm text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition"
+          >
+            ← Previous
+          </button>
+          <button
+            v-if="currentAtomicIndex < atomicFacts.length - 1"
+            @click="goToNextAtomic"
+            :disabled="!currentAtomicAnswer"
+            class="px-4 py-2 text-sm text-white bg-blue-600 rounded-md hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition"
+          >
+            Next →
+          </button>
+          <label v-if="currentAtomicIndex < atomicFacts.length - 1" class="flex items-center gap-2 ml-2 text-sm text-gray-600 cursor-pointer">
+            <input
+              type="checkbox"
+              v-model="autoAdvanceAtomic"
+              class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            />
+            <span>Auto-advance</span>
+          </label>
+        </div>
       </div>
 
-      <div class="space-y-6 mt-8">
+      <div class="mb-6 p-4 bg-gray-50 rounded-md border border-gray-200">
+        <h4 class="text-sm font-semibold text-gray-900 mb-2">Instructions:</h4>
+        <div class="prose prose-sm max-w-none text-gray-700">
+          <p class="mb-2">
+            You will be shown a set of atomic fact statements derived from a police report. 
+            For each atomic fact, indicate whether it is:
+          </p>
+          <ul class="list-disc pl-5 space-y-1 mb-2">
+            <li>
+              <strong>Accurate:</strong> The statement in its entirety is explicitly supported by the video you just watched.
+            </li>
+            <li>
+              <strong>Inaccurate:</strong> The statement contradicts the video, or the statement describes something that is clearly shown differently in the video.
+            </li>
+            <li>
+              <strong>Unsupported:</strong> The statement cannot be verified from the video. The video does not provide enough information to confirm or deny the statement.
+            </li>
+          </ul>
+          <p class="text-xs italic">
+            Important guidelines: Base your judgments only on what is visible or audible in the video. 
+            Do not make assumptions or inferences beyond the video. If the video does not clearly show or state the fact, 
+            select Unsupported. If placeholders appear in the statement (e.g., [INSERT: name]), treat them as written.
+          </p>
+        </div>
+      </div>
+
+      <!-- Current Atomic Fact -->
+      <div class="border-2 border-blue-200 rounded-lg p-6 bg-blue-50 mb-6">
         <AtomicFactQuestion
-          v-for="(fact, index) in atomicFacts"
-          :key="index"
-          :fact="fact"
-          :index="index + 1"
-          :value="responses.atomicFacts?.[index]"
-          @update="(value) => updateAtomicFactResponse(index, value)"
+          :fact="atomicFacts[currentAtomicIndex]"
+          :index="currentAtomicIndex + 1"
+          :value="responses.atomicFacts?.[currentAtomicIndex]"
+          @update="(value) => updateAtomicFactResponse(currentAtomicIndex, value)"
         />
+      </div>
+
+      <!-- Answered Atomic Facts (Collapsed) -->
+      <div v-if="answeredAtomicFacts.length > 0" class="space-y-2">
+        <div
+          v-for="(answered, idx) in answeredAtomicFacts"
+          :key="answered.index"
+          class="flex items-center justify-between p-3 bg-gray-50 rounded-md border border-gray-200 cursor-pointer hover:bg-gray-100 transition"
+          @click="goToAtomicQuestion(answered.index)"
+        >
+          <div class="flex-1">
+            <p class="text-sm font-medium text-gray-700 line-clamp-2">
+              {{ answered.fact }}
+            </p>
+            <p class="text-xs text-gray-500 mt-1">
+              Answer: {{ getAtomicAnswerLabel(answered.answer) }}
+            </p>
+          </div>
+          <button
+            class="ml-4 px-3 py-1 text-xs text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded transition"
+            @click.stop="goToAtomicQuestion(answered.index)"
+          >
+            Edit
+          </button>
+        </div>
       </div>
     </div>
 
-    <!-- Submit Button -->
-    <div class="flex justify-end pb-8">
+    <!-- Submit Button (only show when all atomic facts are answered) -->
+    <div v-if="showAtomicFacts && allAtomicFactsAnswered" class="flex justify-end pb-8">
       <button
         @click="handleSubmit"
-        :disabled="!isFormComplete"
-        class="px-8 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition font-medium"
+        class="px-8 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition font-medium"
       >
         Submit and Continue
       </button>
@@ -147,12 +267,22 @@ const responses = ref({
   atomicFacts: []
 })
 
+const currentLikertIndex = ref(0)
+const currentAtomicIndex = ref(0)
+const showAtomicFacts = ref(false)
+const autoAdvanceLikert = ref(false)
+const autoAdvanceAtomic = ref(false)
+
 // Load existing responses if available
 watch(() => props.existingResponses, (newVal) => {
   if (newVal) {
     responses.value = {
       likertQuestions: newVal.likertQuestions || [],
       atomicFacts: newVal.atomicFacts || []
+    }
+    // If all likert questions are answered, show atomic facts
+    if (newVal.likertQuestions && newVal.likertQuestions.every(q => q !== null && q !== undefined)) {
+      showAtomicFacts.value = true
     }
   } else {
     responses.value = {
@@ -181,11 +311,58 @@ const embedUrl = computed(() => {
   return url
 })
 
+const currentLikertAnswer = computed(() => {
+  return responses.value.likertQuestions?.[currentLikertIndex.value]
+})
+
+const currentAtomicAnswer = computed(() => {
+  return responses.value.atomicFacts?.[currentAtomicIndex.value]
+})
+
+const allLikertAnswered = computed(() => {
+  return responses.value.likertQuestions?.every(q => q !== null && q !== undefined)
+})
+
+const allAtomicFactsAnswered = computed(() => {
+  return responses.value.atomicFacts?.every(f => f !== null && f !== undefined)
+})
+
+const answeredLikertQuestions = computed(() => {
+  return likertQuestions
+    .map((q, idx) => ({
+      question: q,
+      index: idx,
+      answer: responses.value.likertQuestions?.[idx]
+    }))
+    .filter(item => item.answer !== null && item.answer !== undefined && item.index !== currentLikertIndex.value)
+    .sort((a, b) => a.index - b.index)
+})
+
+const answeredAtomicFacts = computed(() => {
+  return props.atomicFacts
+    .map((fact, idx) => ({
+      fact,
+      index: idx,
+      answer: responses.value.atomicFacts?.[idx]
+    }))
+    .filter(item => item.answer !== null && item.answer !== undefined && item.index !== currentAtomicIndex.value)
+    .sort((a, b) => a.index - b.index)
+})
+
 const updateLikertResponse = (index, value) => {
   if (!responses.value.likertQuestions) {
     responses.value.likertQuestions = new Array(likertQuestions.length).fill(null)
   }
   responses.value.likertQuestions[index] = value
+  
+  // Auto-advance if enabled and not on last question
+  if (autoAdvanceLikert.value && index < likertQuestions.length - 1) {
+    setTimeout(() => {
+      if (currentLikertIndex.value === index) {
+        goToNextLikert()
+      }
+    }, 300)
+  }
 }
 
 const updateAtomicFactResponse = (index, value) => {
@@ -193,16 +370,70 @@ const updateAtomicFactResponse = (index, value) => {
     responses.value.atomicFacts = new Array(props.atomicFacts.length).fill(null)
   }
   responses.value.atomicFacts[index] = value
+  
+  // Auto-advance if enabled and not on last question
+  if (autoAdvanceAtomic.value && index < props.atomicFacts.length - 1) {
+    setTimeout(() => {
+      if (currentAtomicIndex.value === index) {
+        goToNextAtomic()
+      }
+    }, 300)
+  }
 }
 
-const isFormComplete = computed(() => {
-  const allLikertAnswered = responses.value.likertQuestions?.every(q => q !== null && q !== undefined)
-  const allAtomicFactsAnswered = responses.value.atomicFacts?.every(f => f !== null && f !== undefined)
-  return allLikertAnswered && allAtomicFactsAnswered
-})
+const goToNextLikert = () => {
+  if (currentLikertIndex.value < likertQuestions.length - 1) {
+    currentLikertIndex.value++
+  }
+}
+
+const goToPreviousLikert = () => {
+  if (currentLikertIndex.value > 0) {
+    currentLikertIndex.value--
+  }
+}
+
+const goToLikertQuestion = (index) => {
+  currentLikertIndex.value = index
+}
+
+const goToNextAtomic = () => {
+  if (currentAtomicIndex.value < props.atomicFacts.length - 1) {
+    currentAtomicIndex.value++
+  }
+}
+
+const goToPreviousAtomic = () => {
+  if (currentAtomicIndex.value > 0) {
+    currentAtomicIndex.value--
+  }
+}
+
+const goToAtomicQuestion = (index) => {
+  currentAtomicIndex.value = index
+}
+
+const getAnswerLabel = (value) => {
+  const labels = {
+    'strongly_disagree': 'Strongly Disagree',
+    'disagree': 'Disagree',
+    'agree': 'Agree',
+    'strongly_agree': 'Strongly Agree'
+  }
+  return labels[value] || value
+}
+
+const getAtomicAnswerLabel = (value) => {
+  const labels = {
+    'accurate': 'Accurate',
+    'inaccurate': 'Inaccurate',
+    'unsupported': 'Unsupported'
+  }
+  return labels[value] || value
+}
 
 const handleSubmit = () => {
-  if (isFormComplete.value) {
+  if (allLikertAnswered.value && allAtomicFactsAnswered.value) {
     emit('submit', responses.value)
   }
 }
