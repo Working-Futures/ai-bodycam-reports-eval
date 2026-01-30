@@ -86,7 +86,7 @@
         >
           <LikertQuestion
             :question="likertQuestions[currentLikertIndex]"
-            :value="responses.likertQuestions?.[currentLikertIndex]"
+            :value="currentLikertAnswer"
             @update="(value) => updateLikertResponse(currentLikertIndex, value)"
           />
         </div>
@@ -158,6 +158,15 @@
       </div>
 
       <div class="mb-6 p-4 bg-gray-50 rounded-md border border-gray-200">
+            <!-- Submit Button (only show when all atomic facts are answered) -->
+    <div v-if="showAtomicFacts && allAtomicFactsAnswered" class="flex justify-end pb-8">
+      <button
+        @click="handleSubmit"
+        class="px-8 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition font-medium"
+      >
+        Submit and Continue
+      </button>
+    </div>
         <h4 class="text-sm font-semibold text-gray-900 mb-2">Instructions:</h4>
         <div class="prose prose-sm max-w-none text-gray-700">
           <p class="mb-2">
@@ -193,7 +202,7 @@
           <AtomicFactQuestion
             :fact="atomicFacts[currentAtomicIndex]"
             :index="currentAtomicIndex + 1"
-            :value="responses.atomicFacts?.[currentAtomicIndex]"
+            :value="currentAtomicAnswer"
             @update="(value) => updateAtomicFactResponse(currentAtomicIndex, value)"
           />
         </div>
@@ -225,15 +234,7 @@
       </div>
     </div>
 
-    <!-- Submit Button (only show when all atomic facts are answered) -->
-    <div v-if="showAtomicFacts && allAtomicFactsAnswered" class="flex justify-end pb-8">
-      <button
-        @click="handleSubmit"
-        class="px-8 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition font-medium"
-      >
-        Submit and Continue
-      </button>
-    </div>
+
 
     <!-- Fixed compact question when scrolled out of view (Likert) -->
     <Transition name="slide-up">
@@ -254,7 +255,7 @@
               @click="updateLikertResponse(currentLikertIndex, option.value)"
               :class="[
                 'px-3 py-2.5 text-xs rounded-md border-2 transition relative',
-                responses.likertQuestions?.[currentLikertIndex] === option.value
+                currentLikertAnswer === option.value
                   ? 'bg-blue-600 text-white border-blue-600'
                   : 'bg-white text-gray-700 border-gray-300 hover:border-blue-400'
               ]"
@@ -289,7 +290,7 @@
               @click="updateAtomicFactResponse(currentAtomicIndex, option.value)"
               :class="[
                 'px-3 py-2.5 text-xs rounded-md border-2 transition font-medium relative',
-                responses.atomicFacts?.[currentAtomicIndex] === option.value
+                currentAtomicAnswer === option.value
                   ? getActiveClass(option.value)
                   : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
               ]"
@@ -390,7 +391,7 @@ watch(() => props.existingResponses, (newVal) => {
       atomicFacts: newVal.atomicFacts || []
     }
     // If all likert questions are answered, show atomic facts
-    if (newVal.likertQuestions && newVal.likertQuestions.every(q => q !== null && q !== undefined)) {
+    if (responses.value.likertQuestions && responses.value.likertQuestions.every(q => q !== null && q !== undefined)) {
       showAtomicFacts.value = true
     }
   } else {
@@ -421,19 +422,29 @@ const embedUrl = computed(() => {
 })
 
 const currentLikertAnswer = computed(() => {
-  return responses.value.likertQuestions?.[currentLikertIndex.value]
+  const response = responses.value.likertQuestions?.[currentLikertIndex.value]
+  if (!response) return null
+  return response.value
 })
 
 const currentAtomicAnswer = computed(() => {
-  return responses.value.atomicFacts?.[currentAtomicIndex.value]
+  const response = responses.value.atomicFacts?.[currentAtomicIndex.value]
+  if (!response) return null
+  return response.value
 })
 
 const allLikertAnswered = computed(() => {
-  return responses.value.likertQuestions?.every(q => q !== null && q !== undefined)
+  return responses.value.likertQuestions?.every(q => {
+    if (!q) return false
+    return (typeof q === 'object' && q.value !== undefined) || q !== null
+  })
 })
 
 const allAtomicFactsAnswered = computed(() => {
-  return responses.value.atomicFacts?.every(f => f !== null && f !== undefined)
+  return responses.value.atomicFacts?.every(f => {
+    if (!f) return false
+    return (typeof f === 'object' && f.value !== undefined) || f !== null
+  })
 })
 
 const answeredLikertQuestions = computed(() => {
@@ -462,7 +473,11 @@ const updateLikertResponse = (index, value) => {
   if (!responses.value.likertQuestions) {
     responses.value.likertQuestions = new Array(likertQuestions.length).fill(null)
   }
-  responses.value.likertQuestions[index] = value
+  responses.value.likertQuestions[index] = {
+    id: index,
+    question: likertQuestions[index],
+    value: value
+  }
   
   // Auto-advance if enabled and not on last question
   if (autoAdvanceLikert.value && index < likertQuestions.length - 1) {
@@ -478,7 +493,11 @@ const updateAtomicFactResponse = (index, value) => {
   if (!responses.value.atomicFacts) {
     responses.value.atomicFacts = new Array(props.atomicFacts.length).fill(null)
   }
-  responses.value.atomicFacts[index] = value
+  responses.value.atomicFacts[index] = {
+    id: index,
+    fact: props.atomicFacts[index],
+    value: value
+  }
   
   // Auto-advance if enabled and not on last question
   if (autoAdvanceAtomic.value && index < props.atomicFacts.length - 1) {
