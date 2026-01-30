@@ -78,17 +78,19 @@
       </div>
 
       <!-- Current Question -->
-      <div 
-        ref="likertQuestionRef" 
-        :key="`likert-${currentLikertIndex}`"
-        class="border-2 border-blue-200 rounded-lg p-6 bg-blue-50 mb-6 animate-fade-in"
-      >
-        <LikertQuestion
-          :question="likertQuestions[currentLikertIndex]"
-          :value="responses.likertQuestions?.[currentLikertIndex]"
-          @update="(value) => updateLikertResponse(currentLikertIndex, value)"
-        />
-      </div>
+      <Transition name="fade-in" mode="out-in">
+        <div 
+          ref="likertQuestionRef" 
+          :key="`likert-${currentLikertIndex}`"
+          class="border-2 border-blue-200 rounded-lg p-6 bg-blue-50 mb-6"
+        >
+          <LikertQuestion
+            :question="likertQuestions[currentLikertIndex]"
+            :value="responses.likertQuestions?.[currentLikertIndex]"
+            @update="(value) => updateLikertResponse(currentLikertIndex, value)"
+          />
+        </div>
+      </Transition>
 
       <!-- Answered Questions (Collapsed) -->
       <div v-if="answeredLikertQuestions.length > 0" class="space-y-2">
@@ -182,18 +184,20 @@
       </div>
 
       <!-- Current Atomic Fact -->
-      <div 
-        ref="atomicQuestionRef" 
-        :key="`atomic-${currentAtomicIndex}`"
-        class="border-2 border-blue-200 rounded-lg p-6 bg-blue-50 mb-6 animate-fade-in"
-      >
-        <AtomicFactQuestion
-          :fact="atomicFacts[currentAtomicIndex]"
-          :index="currentAtomicIndex + 1"
-          :value="responses.atomicFacts?.[currentAtomicIndex]"
-          @update="(value) => updateAtomicFactResponse(currentAtomicIndex, value)"
-        />
-      </div>
+      <Transition name="fade-in" mode="out-in">
+        <div 
+          ref="atomicQuestionRef" 
+          :key="`atomic-${currentAtomicIndex}`"
+          class="border-2 border-blue-200 rounded-lg p-6 bg-blue-50 mb-6"
+        >
+          <AtomicFactQuestion
+            :fact="atomicFacts[currentAtomicIndex]"
+            :index="currentAtomicIndex + 1"
+            :value="responses.atomicFacts?.[currentAtomicIndex]"
+            @update="(value) => updateAtomicFactResponse(currentAtomicIndex, value)"
+          />
+        </div>
+      </Transition>
 
       <!-- Answered Atomic Facts (Collapsed) -->
       <div v-if="answeredAtomicFacts.length > 0" class="space-y-2">
@@ -232,11 +236,12 @@
     </div>
 
     <!-- Fixed compact question when scrolled out of view (Likert) -->
-    <div
-      v-if="!showAtomicFacts && !isLikertQuestionVisible"
-      :key="`fixed-likert-${currentLikertIndex}`"
-      class="fixed bottom-0 left-0 right-0 z-50 bg-blue-50 border-t-2 border-blue-200 shadow-lg animate-slide-up"
-    >
+    <Transition name="slide-up">
+      <div
+        v-if="!showAtomicFacts && !isLikertQuestionVisible"
+        :key="`fixed-likert-${currentLikertIndex}`"
+        class="fixed bottom-0 left-0 right-0 z-50 bg-blue-50 border-t-2 border-blue-200 shadow-lg"
+      >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div class="flex items-center justify-between gap-4">
           <p class="text-sm font-medium text-gray-700 flex-1 line-clamp-3 leading-relaxed">
@@ -265,11 +270,12 @@
     </div>
 
     <!-- Fixed compact question when scrolled out of view (Atomic) -->
-    <div
-      v-if="showAtomicFacts && !isAtomicQuestionVisible"
-      :key="`fixed-atomic-${currentAtomicIndex}`"
-      class="fixed bottom-0 left-0 right-0 z-50 bg-blue-50 border-t-2 border-blue-200 shadow-lg animate-slide-up"
-    >
+    <Transition name="slide-up">
+      <div
+        v-if="showAtomicFacts && !isAtomicQuestionVisible"
+        :key="`fixed-atomic-${currentAtomicIndex}`"
+        class="fixed bottom-0 left-0 right-0 z-50 bg-blue-50 border-t-2 border-blue-200 shadow-lg"
+      >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div class="flex items-center justify-between gap-4">
           <p class="text-sm font-medium text-gray-700 flex-1 line-clamp-3 leading-relaxed">
@@ -295,7 +301,8 @@
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </Transition>
   </div>
 </template>
 
