@@ -78,7 +78,7 @@
       </div>
 
       <!-- Current Question -->
-      <div class="border-2 border-blue-200 rounded-lg p-6 bg-blue-50 mb-6">
+      <div ref="likertQuestionRef" class="border-2 border-blue-200 rounded-lg p-6 bg-blue-50 mb-6">
         <LikertQuestion
           :question="likertQuestions[currentLikertIndex]"
           :value="responses.likertQuestions?.[currentLikertIndex]"
@@ -178,7 +178,7 @@
       </div>
 
       <!-- Current Atomic Fact -->
-      <div class="border-2 border-blue-200 rounded-lg p-6 bg-blue-50 mb-6">
+      <div ref="atomicQuestionRef" class="border-2 border-blue-200 rounded-lg p-6 bg-blue-50 mb-6">
         <AtomicFactQuestion
           :fact="atomicFacts[currentAtomicIndex]"
           :index="currentAtomicIndex + 1"
@@ -222,6 +222,66 @@
         Submit and Continue
       </button>
     </div>
+
+    <!-- Fixed compact question when scrolled out of view (Likert) -->
+    <div
+      v-if="!showAtomicFacts && !isLikertQuestionVisible"
+      class="fixed bottom-0 left-0 right-0 z-50 bg-blue-50 border-t-2 border-blue-200 shadow-lg"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center justify-between gap-4">
+          <p class="text-sm font-medium text-gray-700 flex-1 line-clamp-3 leading-relaxed">
+            {{ likertQuestions[currentLikertIndex] }}
+          </p>
+          <div class="flex gap-2 flex-shrink-0">
+            <button
+              v-for="(option, index) in likertOptions"
+              :key="option.value"
+              @click="updateLikertResponse(currentLikertIndex, option.value)"
+              :class="[
+                'px-3 py-1 text-xs rounded-md border-2 transition',
+                responses.likertQuestions?.[currentLikertIndex] === option.value
+                  ? 'bg-blue-600 text-white border-blue-600'
+                  : 'bg-white text-gray-700 border-gray-300 hover:border-blue-400'
+              ]"
+            >
+              <span class="text-xs mr-1">{{ index + 1 }}</span>
+              {{ option.shortLabel }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fixed compact question when scrolled out of view (Atomic) -->
+    <div
+      v-if="showAtomicFacts && !isAtomicQuestionVisible"
+      class="fixed bottom-0 left-0 right-0 z-50 bg-blue-50 border-t-2 border-blue-200 shadow-lg"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center justify-between gap-4">
+          <p class="text-sm font-medium text-gray-700 flex-1 line-clamp-3 leading-relaxed">
+            {{ atomicFacts[currentAtomicIndex] }}
+          </p>
+          <div class="flex gap-2 flex-shrink-0">
+            <button
+              v-for="(option, index) in atomicOptions"
+              :key="option.value"
+              @click="updateAtomicFactResponse(currentAtomicIndex, option.value)"
+              :class="[
+                'px-3 py-1 text-xs rounded-md border-2 transition font-medium',
+                responses.atomicFacts?.[currentAtomicIndex] === option.value
+                  ? getActiveClass(option.value)
+                  : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
+              ]"
+            >
+              <span class="text-xs mr-1">{{ index + 1 }}</span>
+              {{ option.label }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -229,6 +289,33 @@
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import LikertQuestion from './LikertQuestion.vue'
 import AtomicFactQuestion from './AtomicFactQuestion.vue'
+
+const likertQuestionRef = ref(null)
+const atomicQuestionRef = ref(null)
+const isLikertQuestionVisible = ref(true)
+const isAtomicQuestionVisible = ref(true)
+
+const likertOptions = [
+  { value: 'strongly_disagree', label: 'Strongly Disagree', shortLabel: 'Str. Disagree' },
+  { value: 'disagree', label: 'Disagree', shortLabel: 'Disagree' },
+  { value: 'agree', label: 'Agree', shortLabel: 'Agree' },
+  { value: 'strongly_agree', label: 'Strongly Agree', shortLabel: 'Str. Agree' }
+]
+
+const atomicOptions = [
+  { value: 'accurate', label: 'Accurate' },
+  { value: 'inaccurate', label: 'Inaccurate' },
+  { value: 'unsupported', label: 'Unsupported' }
+]
+
+const getActiveClass = (value) => {
+  const classes = {
+    accurate: 'bg-green-600 text-white border-green-600',
+    inaccurate: 'bg-red-600 text-white border-red-600',
+    unsupported: 'bg-yellow-500 text-white border-yellow-500'
+  }
+  return classes[value] || 'bg-blue-600 text-white border-blue-600'
+}
 
 const props = defineProps({
   video: {
@@ -475,11 +562,59 @@ const handleKeyPress = (event) => {
   }
 }
 
+// Intersection Observer for visibility detection
+let likertObserver = null
+let atomicObserver = null
+
 onMounted(() => {
   window.addEventListener('keydown', handleKeyPress)
+
+  // Set up intersection observer for Likert questions
+  if (likertQuestionRef.value) {
+    likertObserver = new IntersectionObserver(
+      (entries) => {
+        isLikertQuestionVisible.value = entries[0].isIntersecting
+      },
+      { threshold: 0.1 }
+    )
+    likertObserver.observe(likertQuestionRef.value)
+  }
+
+  // Set up intersection observer for Atomic facts
+  if (atomicQuestionRef.value) {
+    atomicObserver = new IntersectionObserver(
+      (entries) => {
+        isAtomicQuestionVisible.value = entries[0].isIntersecting
+      },
+      { threshold: 0.1 }
+    )
+    atomicObserver.observe(atomicQuestionRef.value)
+  }
 })
 
 onUnmounted(() => {
   window.removeEventListener('keydown', handleKeyPress)
+  if (likertObserver) {
+    likertObserver.disconnect()
+  }
+  if (atomicObserver) {
+    atomicObserver.disconnect()
+  }
+})
+
+// Watch for question changes to update observers
+watch([currentLikertIndex, showAtomicFacts, currentAtomicIndex], () => {
+  setTimeout(() => {
+    if (likertObserver && likertQuestionRef.value && !showAtomicFacts.value) {
+      likertObserver.disconnect()
+      likertObserver.observe(likertQuestionRef.value)
+      isLikertQuestionVisible.value = true
+    }
+    if (atomicObserver && atomicQuestionRef.value && showAtomicFacts.value) {
+      atomicObserver.disconnect()
+      atomicObserver.observe(atomicQuestionRef.value)
+      isAtomicQuestionVisible.value = true
+    }
+  }, 100)
 })
 </script>
