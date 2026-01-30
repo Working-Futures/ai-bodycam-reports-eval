@@ -267,7 +267,8 @@
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </Transition>
 
     <!-- Fixed compact question when scrolled out of view (Atomic) -->
     <Transition name="slide-up">
