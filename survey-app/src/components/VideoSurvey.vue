@@ -595,15 +595,18 @@ onMounted(() => {
   }
 
   // Set up intersection observer for Atomic facts
-  if (atomicQuestionRef.value) {
-    atomicObserver = new IntersectionObserver(
-      (entries) => {
-        isAtomicQuestionVisible.value = entries[0].isIntersecting
-      },
-      { threshold: 0.5 }
-    )
-    atomicObserver.observe(atomicQuestionRef.value)
-  }
+  // Use nextTick to ensure element is rendered
+  setTimeout(() => {
+    if (atomicQuestionRef.value) {
+      atomicObserver = new IntersectionObserver(
+        (entries) => {
+          isAtomicQuestionVisible.value = entries[0].isIntersecting
+        },
+        { threshold: 0.5 }
+      )
+      atomicObserver.observe(atomicQuestionRef.value)
+    }
+  }, 100)
 })
 
 onUnmounted(() => {
@@ -624,11 +627,24 @@ watch([currentLikertIndex, showAtomicFacts, currentAtomicIndex], () => {
       likertObserver.observe(likertQuestionRef.value)
       isLikertQuestionVisible.value = true
     }
-    if (atomicObserver && atomicQuestionRef.value && showAtomicFacts.value) {
-      atomicObserver.disconnect()
-      atomicObserver.observe(atomicQuestionRef.value)
-      isAtomicQuestionVisible.value = true
+    if (showAtomicFacts.value) {
+      // Re-initialize atomic observer when switching to atomic facts
+      if (atomicObserver && atomicQuestionRef.value) {
+        atomicObserver.disconnect()
+        atomicObserver.observe(atomicQuestionRef.value)
+        isAtomicQuestionVisible.value = true
+      } else if (atomicQuestionRef.value) {
+        // Create observer if it doesn't exist yet
+        atomicObserver = new IntersectionObserver(
+          (entries) => {
+            isAtomicQuestionVisible.value = entries[0].isIntersecting
+          },
+          { threshold: 0.5 }
+        )
+        atomicObserver.observe(atomicQuestionRef.value)
+        isAtomicQuestionVisible.value = true
+      }
     }
-  }, 100)
+  }, 150)
 })
 </script>
