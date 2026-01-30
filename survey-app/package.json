@@ -6,7 +6,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "server": "node server.js"
+    "server": "node server.js",
+    "start": "NODE_ENV=production node server.js",
+    "build:start": "npm run build && npm run start"
   },
   "dependencies": {
     "vue": "^3.4.0",

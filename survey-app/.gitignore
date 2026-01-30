@@ -4,3 +4,5 @@ responses/
 data/
 .DS_Store
 *.log
+.env
+.env.local
