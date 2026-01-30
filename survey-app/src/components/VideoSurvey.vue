@@ -226,7 +226,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import LikertQuestion from './LikertQuestion.vue'
 import AtomicFactQuestion from './AtomicFactQuestion.vue'
 
@@ -437,4 +437,49 @@ const handleSubmit = () => {
     emit('submit', responses.value)
   }
 }
+
+// Keyboard shortcuts
+const handleKeyPress = (event) => {
+  // Only handle if not typing in an input field
+  if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+    return
+  }
+
+  const key = event.key
+  
+  // Handle Likert questions (1-4)
+  if (!showAtomicFacts.value && key >= '1' && key <= '4') {
+    const likertOptions = [
+      'strongly_disagree',
+      'disagree',
+      'agree',
+      'strongly_agree'
+    ]
+    const optionIndex = parseInt(key) - 1
+    if (optionIndex >= 0 && optionIndex < likertOptions.length) {
+      updateLikertResponse(currentLikertIndex.value, likertOptions[optionIndex])
+    }
+  }
+  
+  // Handle Atomic Facts (1-3)
+  if (showAtomicFacts.value && key >= '1' && key <= '3') {
+    const atomicOptions = [
+      'accurate',
+      'inaccurate',
+      'unsupported'
+    ]
+    const optionIndex = parseInt(key) - 1
+    if (optionIndex >= 0 && optionIndex < atomicOptions.length) {
+      updateAtomicFactResponse(currentAtomicIndex.value, atomicOptions[optionIndex])
+    }
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKeyPress)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeyPress)
+})
 </script>

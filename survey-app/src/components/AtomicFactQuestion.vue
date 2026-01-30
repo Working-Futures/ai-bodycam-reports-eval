@@ -8,17 +8,20 @@
         <p class="text-gray-800 mb-4">{{ fact }}</p>
         <div class="flex space-x-3">
           <button
-            v-for="option in options"
+            v-for="(option, index) in options"
             :key="option.value"
             @click="$emit('update', option.value)"
             :class="[
-              'px-4 py-2 rounded-md border-2 transition font-medium',
+              'px-4 py-2 rounded-md border-2 transition font-medium relative',
               value === option.value
                 ? getActiveClass(option.value)
                 : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
             ]"
           >
-            {{ option.label }}
+            <span class="absolute -top-2 -left-2 w-6 h-6 bg-gray-800 text-white text-xs rounded-full flex items-center justify-center font-bold shadow-md z-10">
+              {{ index + 1 }}
+            </span>
+            <span class="relative z-0">{{ option.label }}</span>
           </button>
         </div>
       </div>

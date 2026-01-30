@@ -3,24 +3,23 @@
     <label class="block text-lg font-semibold text-gray-900 mb-6">
       {{ question }}
     </label>
-    <div class="flex items-center justify-between space-x-4">
-      <span class="text-xs text-gray-500 w-24">Strongly Disagree</span>
-      <div class="flex-1 flex items-center justify-center space-x-2">
-        <button
-          v-for="option in options"
-          :key="option.value"
-          @click="$emit('update', option.value)"
-          :class="[
-            'px-4 py-2 rounded-md border-2 transition',
-            value === option.value
-              ? 'bg-blue-600 text-white border-blue-600'
-              : 'bg-white text-gray-700 border-gray-300 hover:border-blue-400'
-          ]"
-        >
-          {{ option.label }}
-        </button>
-      </div>
-      <span class="text-xs text-gray-500 w-24 text-right">Strongly Agree</span>
+    <div class="flex items-center justify-center gap-2">
+      <button
+        v-for="(option, index) in options"
+        :key="option.value"
+        @click="$emit('update', option.value)"
+        :class="[
+          'flex-1 px-2 py-2 rounded-md border-2 transition relative min-w-0 text-sm h-12',
+          value === option.value
+            ? 'bg-blue-600 text-white border-blue-600'
+            : 'bg-white text-gray-700 border-gray-300 hover:border-blue-400'
+        ]"
+      >
+        <span class="absolute -top-2 -left-2 w-6 h-6 bg-gray-800 text-white text-xs rounded-full flex items-center justify-center font-bold shadow-md z-10">
+          {{ index + 1 }}
+        </span>
+        <span class="relative z-0 block text-center leading-tight">{{ option.label }}</span>
+      </button>
     </div>
   </div>
 </template>
