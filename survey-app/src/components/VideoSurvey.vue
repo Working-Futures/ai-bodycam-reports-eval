@@ -312,6 +312,7 @@
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import LikertQuestion from './LikertQuestion.vue'
 import AtomicFactQuestion from './AtomicFactQuestion.vue'
+import { saveUserResponse } from '../api'
 
 const likertQuestionRef = ref(null)
 const atomicQuestionRef = ref(null)
@@ -356,6 +357,10 @@ const props = defineProps({
   existingResponses: {
     type: Object,
     default: null
+  },
+  username: {
+    type: String,
+    required: true
   }
 })
 
@@ -382,6 +387,41 @@ const currentAtomicIndex = ref(0)
 const showAtomicFacts = ref(false)
 const autoAdvanceLikert = ref(false)
 const autoAdvanceAtomic = ref(false)
+
+// Auto-save functionality
+let saveTimeout = null
+const isSaving = ref(false)
+
+const autoSave = async () => {
+  if (saveTimeout) {
+    clearTimeout(saveTimeout)
+  }
+  
+  saveTimeout = setTimeout(async () => {
+    try {
+      isSaving.value = true
+      const videoId = props.video.VideoID
+      await saveUserResponse(props.username, videoId, responses.value)
+    } catch (error) {
+      console.error('Error auto-saving response:', error)
+      // Don't show alert for auto-save failures to avoid interrupting user
+    } finally {
+      isSaving.value = false
+    }
+  }, 1000) // Debounce: save 1 second after last change
+}
+
+// Watch for response changes and auto-save
+watch(() => responses.value, () => {
+  autoSave()
+}, { deep: true })
+
+// Cleanup timeout on unmount
+onUnmounted(() => {
+  if (saveTimeout) {
+    clearTimeout(saveTimeout)
+  }
+})
 
 // Load existing responses if available
 watch(() => props.existingResponses, (newVal) => {
@@ -452,7 +492,7 @@ const answeredLikertQuestions = computed(() => {
     .map((q, idx) => ({
       question: q,
       index: idx,
-      answer: responses.value.likertQuestions?.[idx]
+      answer: responses.value.likertQuestions?.[idx]?.value
     }))
     .filter(item => item.answer !== null && item.answer !== undefined && item.index !== currentLikertIndex.value)
     .sort((a, b) => a.index - b.index)
@@ -463,7 +503,7 @@ const answeredAtomicFacts = computed(() => {
     .map((fact, idx) => ({
       fact,
       index: idx,
-      answer: responses.value.atomicFacts?.[idx]
+      answer: responses.value.atomicFacts?.[idx]?.value
     }))
     .filter(item => item.answer !== null && item.answer !== undefined && item.index !== currentAtomicIndex.value)
     .sort((a, b) => a.index - b.index)

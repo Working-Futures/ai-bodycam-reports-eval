@@ -49,6 +49,7 @@
         :narrative="currentNarrative"
         :atomic-facts="currentAtomicFacts"
         :existing-responses="existingResponses[currentVideo.VideoID]"
+        :username="username"
         @submit="handleSubmit"
       />
     </div>
