@@ -78,7 +78,11 @@
       </div>
 
       <!-- Current Question -->
-      <div ref="likertQuestionRef" class="border-2 border-blue-200 rounded-lg p-6 bg-blue-50 mb-6">
+      <div 
+        ref="likertQuestionRef" 
+        :key="`likert-${currentLikertIndex}`"
+        class="border-2 border-blue-200 rounded-lg p-6 bg-blue-50 mb-6 animate-fade-in"
+      >
         <LikertQuestion
           :question="likertQuestions[currentLikertIndex]"
           :value="responses.likertQuestions?.[currentLikertIndex]"
@@ -178,7 +182,11 @@
       </div>
 
       <!-- Current Atomic Fact -->
-      <div ref="atomicQuestionRef" class="border-2 border-blue-200 rounded-lg p-6 bg-blue-50 mb-6">
+      <div 
+        ref="atomicQuestionRef" 
+        :key="`atomic-${currentAtomicIndex}`"
+        class="border-2 border-blue-200 rounded-lg p-6 bg-blue-50 mb-6 animate-fade-in"
+      >
         <AtomicFactQuestion
           :fact="atomicFacts[currentAtomicIndex]"
           :index="currentAtomicIndex + 1"
@@ -226,7 +234,8 @@
     <!-- Fixed compact question when scrolled out of view (Likert) -->
     <div
       v-if="!showAtomicFacts && !isLikertQuestionVisible"
-      class="fixed bottom-0 left-0 right-0 z-50 bg-blue-50 border-t-2 border-blue-200 shadow-lg"
+      :key="`fixed-likert-${currentLikertIndex}`"
+      class="fixed bottom-0 left-0 right-0 z-50 bg-blue-50 border-t-2 border-blue-200 shadow-lg animate-slide-up"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div class="flex items-center justify-between gap-4">
@@ -258,7 +267,8 @@
     <!-- Fixed compact question when scrolled out of view (Atomic) -->
     <div
       v-if="showAtomicFacts && !isAtomicQuestionVisible"
-      class="fixed bottom-0 left-0 right-0 z-50 bg-blue-50 border-t-2 border-blue-200 shadow-lg"
+      :key="`fixed-atomic-${currentAtomicIndex}`"
+      class="fixed bottom-0 left-0 right-0 z-50 bg-blue-50 border-t-2 border-blue-200 shadow-lg animate-slide-up"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div class="flex items-center justify-between gap-4">
@@ -579,7 +589,7 @@ onMounted(() => {
       (entries) => {
         isLikertQuestionVisible.value = entries[0].isIntersecting
       },
-      { threshold: 0.1 }
+      { threshold: 0.5 }
     )
     likertObserver.observe(likertQuestionRef.value)
   }
@@ -590,7 +600,7 @@ onMounted(() => {
       (entries) => {
         isAtomicQuestionVisible.value = entries[0].isIntersecting
       },
-      { threshold: 0.1 }
+      { threshold: 0.5 }
     )
     atomicObserver.observe(atomicQuestionRef.value)
   }
