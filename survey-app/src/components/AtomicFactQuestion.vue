@@ -18,7 +18,7 @@
                 : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
             ]"
           >
-            <span class="absolute top-1 left-1 w-4 h-4 border border-gray-400 text-gray-600 text-[10px] rounded flex items-center justify-center font-mono font-semibold bg-transparent z-10">
+            <span class="absolute top-1 left-1 w-4 h-4 border border-red-300 text-red-500 text-[10px] rounded flex items-center justify-center font-mono font-semibold bg-transparent z-10 shadow-sm">
               {{ index + 1 }}
             </span>
             <span class="relative z-0">{{ option.label }}</span>
