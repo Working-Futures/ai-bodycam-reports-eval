@@ -9,13 +9,13 @@
         :key="option.value"
         @click="$emit('update', option.value)"
         :class="[
-          'flex-1 px-2 py-2 rounded-md border-2 transition relative min-w-0 text-sm h-12',
+          'flex-1 px-2 py-2 rounded-md border-2 transition relative min-w-0 text-sm h-14',
           value === option.value
             ? 'bg-blue-600 text-white border-blue-600'
             : 'bg-white text-gray-700 border-gray-300 hover:border-blue-400'
         ]"
       >
-        <span class="absolute -top-2 -left-2 w-6 h-6 bg-gray-800 text-white text-xs rounded-full flex items-center justify-center font-bold shadow-md z-10">
+        <span class="absolute top-1 left-1 w-4 h-4 border border-gray-400 text-gray-600 text-[10px] rounded flex items-center justify-center font-mono font-semibold bg-transparent z-10">
           {{ index + 1 }}
         </span>
         <span class="relative z-0 block text-center leading-tight">{{ option.label }}</span>

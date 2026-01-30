@@ -239,13 +239,15 @@
               :key="option.value"
               @click="updateLikertResponse(currentLikertIndex, option.value)"
               :class="[
-                'px-3 py-1 text-xs rounded-md border-2 transition',
+                'px-3 py-2.5 text-xs rounded-md border-2 transition relative',
                 responses.likertQuestions?.[currentLikertIndex] === option.value
                   ? 'bg-blue-600 text-white border-blue-600'
                   : 'bg-white text-gray-700 border-gray-300 hover:border-blue-400'
               ]"
             >
-              <span class="text-xs mr-1">{{ index + 1 }}</span>
+              <span class="absolute top-0.5 left-0.5 w-3 h-3 border border-gray-400 text-gray-600 text-[10px] rounded flex items-center justify-center font-mono font-semibold bg-transparent">
+                {{ index + 1 }}
+              </span>
               {{ option.shortLabel }}
             </button>
           </div>
@@ -269,13 +271,15 @@
               :key="option.value"
               @click="updateAtomicFactResponse(currentAtomicIndex, option.value)"
               :class="[
-                'px-3 py-1 text-xs rounded-md border-2 transition font-medium',
+                'px-3 py-2.5 text-xs rounded-md border-2 transition font-medium relative',
                 responses.atomicFacts?.[currentAtomicIndex] === option.value
                   ? getActiveClass(option.value)
                   : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
               ]"
             >
-              <span class="text-xs mr-1">{{ index + 1 }}</span>
+              <span class="absolute top-0.5 left-0.5 w-3 h-3 border border-gray-400 text-gray-600 text-[10px] rounded flex items-center justify-center font-mono font-semibold bg-transparent">
+                {{ index + 1 }}
+              </span>
               {{ option.label }}
             </button>
           </div>
