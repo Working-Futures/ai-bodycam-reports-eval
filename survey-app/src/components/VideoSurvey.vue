@@ -164,7 +164,7 @@
         @click="handleSubmit"
         class="px-8 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition font-medium"
       >
-        Submit and Continue
+        {{ props.isReviewing ? 'Update and Return' : 'Submit and Continue' }}
       </button>
     </div>
         <h4 class="text-sm font-semibold text-gray-900 mb-2">Instructions:</h4>
@@ -361,6 +361,10 @@ const props = defineProps({
   username: {
     type: String,
     required: true
+  },
+  isReviewing: {
+    type: Boolean,
+    default: false
   }
 })
 

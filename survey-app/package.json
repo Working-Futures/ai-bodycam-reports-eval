@@ -11,10 +11,11 @@
     "build:start": "npm run build && npm run start"
   },
   "dependencies": {
-    "vue": "^3.4.0",
-    "express": "^4.18.2",
+    "@rollup/rollup-linux-arm64-gnu": "^4.57.1",
     "cors": "^2.8.5",
-    "csv-parser": "^3.0.0"
+    "csv-parser": "^3.0.0",
+    "express": "^4.18.2",
+    "vue": "^3.4.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.0",

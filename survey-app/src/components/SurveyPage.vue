@@ -43,6 +43,32 @@
     </div>
 
     <div v-else-if="currentVideo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <!-- Back / reviewing navigation bar -->
+      <div class="flex items-center justify-between mb-4">
+        <button
+          v-if="canGoBack"
+          @click="goBack"
+          class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 transition"
+        >
+          <span>←</span>
+          <span>Previous Video</span>
+        </button>
+        <span v-else></span>
+
+        <div v-if="isReviewing" class="flex items-center gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-amber-800 bg-amber-100 border border-amber-300 rounded-full">
+            Re-labeling: {{ currentVideo.VideoID }}
+          </span>
+          <button
+            @click="returnToCurrent"
+            class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-blue-700 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 transition"
+          >
+            <span>Return to current video</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+
       <VideoSurvey
         :key="currentVideo.VideoID"
         :video="currentVideo"
@@ -50,6 +76,7 @@
         :atomic-facts="currentAtomicFacts"
         :existing-responses="existingResponses[currentVideo.VideoID]"
         :username="username"
+        :is-reviewing="isReviewing"
         @submit="handleSubmit"
       />
     </div>
@@ -89,11 +116,28 @@ const loading = ref(true)
 const videos = ref([])
 const currentVideoIndex = ref(0)
 const existingResponses = ref({})
+const videoHistory = ref([])        // Ordered list of video IDs as user completes them
+const reviewingVideoId = ref(null)  // Set when user is re-labeling a previous video
+
+const isReviewing = computed(() => reviewingVideoId.value !== null)
 
 const currentVideo = computed(() => {
+  // If reviewing a previous video, show that one
+  if (reviewingVideoId.value) {
+    return videos.value.find(v => v.VideoID === reviewingVideoId.value) || null
+  }
   if (videos.value.length === 0) return null
   const remaining = getRemainingVideos()
   return remaining.length > 0 ? remaining[0] : null
+})
+
+const canGoBack = computed(() => {
+  if (isReviewing.value) {
+    // Can go further back if there's a video before this one in history
+    const idx = videoHistory.value.indexOf(reviewingVideoId.value)
+    return idx > 0
+  }
+  return videoHistory.value.length > 0
 })
 
 const currentNarrative = ref('')
@@ -142,11 +186,37 @@ const loadCurrentVideoData = async () => {
   }
 }
 
+const goBack = () => {
+  if (isReviewing.value) {
+    // Go further back in history
+    const idx = videoHistory.value.indexOf(reviewingVideoId.value)
+    if (idx > 0) {
+      reviewingVideoId.value = videoHistory.value[idx - 1]
+    }
+  } else {
+    // Go to the most recently completed video
+    reviewingVideoId.value = videoHistory.value[videoHistory.value.length - 1]
+  }
+}
+
+const returnToCurrent = () => {
+  reviewingVideoId.value = null
+}
+
 const handleSubmit = async (responses) => {
   const videoId = currentVideo.value.VideoID
   try {
     await saveUserResponse(props.username, videoId, responses)
     existingResponses.value[videoId] = responses
+
+    if (isReviewing.value) {
+      // Done re-labeling — return to the next uncompleted video
+      reviewingVideoId.value = null
+    } else {
+      // Normal flow — record in history
+      videoHistory.value.push(videoId)
+    }
+
     // Wait a moment for the computed property to update, then load next video
     await new Promise(resolve => setTimeout(resolve, 100))
     await loadCurrentVideoData()
