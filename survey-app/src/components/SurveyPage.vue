@@ -33,12 +33,20 @@
               </option>
             </select>
           </div>
-          <button
-            @click="handleLogout"
-            class="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50"
-          >
-            Logout
-          </button>
+          <div class="flex items-center gap-2">
+            <button
+              @click="handleDownload"
+              class="px-4 py-2 text-sm text-blue-600 hover:text-blue-800 border border-blue-300 rounded-md hover:bg-blue-50"
+            >
+              ↓ Download Labels
+            </button>
+            <button
+              @click="handleLogout"
+              class="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50"
+            >
+              Logout
+            </button>
+          </div>
         </div>
         <div class="mt-4">
           <div class="w-full bg-gray-200 rounded-full h-2">
@@ -292,6 +300,22 @@ const handleSubmit = async (responses) => {
   } catch (error) {
     console.error('Error saving response:', error)
     alert('Error saving response. Please try again.')
+  }
+}
+
+const handleDownload = async () => {
+  try {
+    const data = await loadUserResponses(props.username)
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `${props.username}.json`
+    a.click()
+    URL.revokeObjectURL(url)
+  } catch (error) {
+    console.error('Error downloading responses:', error)
+    alert('Error downloading responses.')
   }
 }
 
