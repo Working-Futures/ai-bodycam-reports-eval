@@ -396,11 +396,21 @@ const autoAdvanceAtomic = ref(true)
 let saveTimeout = null
 const isSaving = ref(false)
 
+// Only auto-save when the user has actually answered at least one question
+const hasAnyAnswer = () => {
+  const hasLikert = responses.value.likertQuestions?.some(q => q !== null && q !== undefined)
+  const hasAtomic = responses.value.atomicFacts?.some(f => f !== null && f !== undefined)
+  return hasLikert || hasAtomic
+}
+
 const autoSave = async () => {
   if (saveTimeout) {
     clearTimeout(saveTimeout)
   }
-  
+
+  // Skip saving empty/initialisation-only responses
+  if (!hasAnyAnswer()) return
+
   saveTimeout = setTimeout(async () => {
     try {
       isSaving.value = true

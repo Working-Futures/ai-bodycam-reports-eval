@@ -29,7 +29,7 @@
                 :key="v.VideoID"
                 :value="v.VideoID"
               >
-                {{ existingResponses[v.VideoID] ? '✓' : '○' }} {{ v.VideoID }}
+                {{ isVideoSubmitted(v.VideoID) ? '✓' : '○' }} {{ v.VideoID }}
               </option>
             </select>
           </div>
@@ -166,9 +166,14 @@ const currentVideo = computed(() => {
   return remaining.length > 0 ? remaining[0] : null
 })
 
+// Only responses explicitly submitted count as "completed"
+const isVideoSubmitted = (videoId) => {
+  const r = existingResponses.value[videoId]
+  return r && r.submitted === true
+}
+
 const canGoBack = computed(() => {
-  // Show the back button whenever there are any completed videos to revisit
-  return Object.keys(existingResponses.value).length > 0
+  return Object.keys(existingResponses.value).some(id => isVideoSubmitted(id))
 })
 
 const currentNarrative = ref('')
@@ -176,7 +181,7 @@ const currentAtomicFacts = ref([])
 
 const totalVideos = computed(() => videos.value.length)
 const completedCount = computed(() => {
-  return Object.keys(existingResponses.value).length
+  return Object.keys(existingResponses.value).filter(id => isVideoSubmitted(id)).length
 })
 const remainingCount = computed(() => totalVideos.value - completedCount.value)
 const progressPercentage = computed(() => {
@@ -185,8 +190,7 @@ const progressPercentage = computed(() => {
 })
 
 const getRemainingVideos = () => {
-  const completedIds = new Set(Object.keys(existingResponses.value))
-  return videos.value.filter(v => !completedIds.has(v.VideoID))
+  return videos.value.filter(v => !isVideoSubmitted(v.VideoID))
 }
 
 // Sorted list of all videos for the dropdown selector
@@ -237,11 +241,11 @@ const loadCurrentVideoData = async () => {
   }
 }
 
-// Build ordered list: session history first, then any other completed videos sorted by ID
+// Build ordered list: session history first, then any other submitted videos sorted by ID
 const completedVideoList = computed(() => {
   const historySet = new Set(videoHistory.value)
   const otherCompleted = Object.keys(existingResponses.value)
-    .filter(id => !historySet.has(id))
+    .filter(id => isVideoSubmitted(id) && !historySet.has(id))
     .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
   // Session history (oldest→newest), then previously completed (sorted)
   return [...videoHistory.value, ...otherCompleted]
@@ -270,8 +274,9 @@ const returnToCurrent = () => {
 const handleSubmit = async (responses) => {
   const videoId = currentVideo.value.VideoID
   try {
-    await saveUserResponse(props.username, videoId, responses)
-    existingResponses.value[videoId] = responses
+    const submittedResponses = { ...responses, submitted: true }
+    await saveUserResponse(props.username, videoId, submittedResponses)
+    existingResponses.value[videoId] = submittedResponses
 
     if (isReviewing.value) {
       // Done re-labeling — return to the next uncompleted video
