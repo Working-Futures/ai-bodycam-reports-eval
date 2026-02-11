@@ -8,13 +8,30 @@
             <h1 class="text-2xl font-bold text-gray-900">Bodycam Survey</h1>
             <p class="text-sm text-gray-600">User: {{ username }}</p>
           </div>
-          <div class="text-right">
-            <p class="text-sm font-medium text-gray-700">
-              Progress: {{ completedCount }} / {{ totalVideos }} videos completed
-            </p>
-            <p class="text-xs text-gray-500">
-              {{ remainingCount }} remaining
-            </p>
+          <div class="flex items-center gap-4">
+            <div class="text-right">
+              <p class="text-sm font-medium text-gray-700">
+                Progress: {{ completedCount }} / {{ totalVideos }} videos completed
+              </p>
+              <p class="text-xs text-gray-500">
+                {{ remainingCount }} remaining
+              </p>
+            </div>
+            <select
+              v-if="sortedVideos.length > 0"
+              :value="activeVideoId || ''"
+              @change="goToVideo($event.target.value)"
+              class="px-3 py-2 text-sm border border-gray-300 rounded-md bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 max-w-[200px]"
+            >
+              <option value="" disabled>Jump to video...</option>
+              <option
+                v-for="v in sortedVideos"
+                :key="v.VideoID"
+                :value="v.VideoID"
+              >
+                {{ existingResponses[v.VideoID] ? '✓' : '○' }} {{ v.VideoID }}
+              </option>
+            </select>
           </div>
           <button
             @click="handleLogout"
@@ -87,12 +104,30 @@
         <p class="text-gray-600 mb-6">
           You have completed all {{ totalVideos }} videos. Thank you for your participation.
         </p>
-        <button
-          @click="handleLogout"
-          class="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-        >
-          Logout
-        </button>
+        <p class="text-sm text-gray-500 mb-4">
+          Need to revisit a video? Use the dropdown above or select one below.
+        </p>
+        <div class="flex items-center justify-center gap-4">
+          <select
+            @change="goToVideo($event.target.value)"
+            class="px-3 py-2 text-sm border border-gray-300 rounded-md bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          >
+            <option value="" selected disabled>Re-label a video...</option>
+            <option
+              v-for="v in sortedVideos"
+              :key="v.VideoID"
+              :value="v.VideoID"
+            >
+              {{ v.VideoID }}
+            </option>
+          </select>
+          <button
+            @click="handleLogout"
+            class="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+          >
+            Logout
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -132,12 +167,8 @@ const currentVideo = computed(() => {
 })
 
 const canGoBack = computed(() => {
-  if (isReviewing.value) {
-    // Can go further back if there's a video before this one in history
-    const idx = videoHistory.value.indexOf(reviewingVideoId.value)
-    return idx > 0
-  }
-  return videoHistory.value.length > 0
+  // Show the back button whenever there are any completed videos to revisit
+  return Object.keys(existingResponses.value).length > 0
 })
 
 const currentNarrative = ref('')
@@ -156,6 +187,26 @@ const progressPercentage = computed(() => {
 const getRemainingVideos = () => {
   const completedIds = new Set(Object.keys(existingResponses.value))
   return videos.value.filter(v => !completedIds.has(v.VideoID))
+}
+
+// Sorted list of all videos for the dropdown selector
+const sortedVideos = computed(() => {
+  return [...videos.value].sort((a, b) => a.VideoID.localeCompare(b.VideoID, undefined, { numeric: true }))
+})
+
+// The VideoID that is currently active (reviewing or natural next)
+const activeVideoId = computed(() => currentVideo.value?.VideoID || null)
+
+const goToVideo = (videoId) => {
+  if (!videoId) return
+  // If this is the natural next uncompleted video, clear review mode
+  const remaining = getRemainingVideos()
+  const nextNatural = remaining.length > 0 ? remaining[0].VideoID : null
+  if (videoId === nextNatural) {
+    reviewingVideoId.value = null
+  } else {
+    reviewingVideoId.value = videoId
+  }
 }
 
 const shuffleArray = (array) => {
@@ -186,16 +237,29 @@ const loadCurrentVideoData = async () => {
   }
 }
 
+// Build ordered list: session history first, then any other completed videos sorted by ID
+const completedVideoList = computed(() => {
+  const historySet = new Set(videoHistory.value)
+  const otherCompleted = Object.keys(existingResponses.value)
+    .filter(id => !historySet.has(id))
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+  // Session history (oldest→newest), then previously completed (sorted)
+  return [...videoHistory.value, ...otherCompleted]
+})
+
 const goBack = () => {
+  const list = completedVideoList.value
+  if (list.length === 0) return
+
   if (isReviewing.value) {
-    // Go further back in history
-    const idx = videoHistory.value.indexOf(reviewingVideoId.value)
+    // Move one step earlier in the completed list
+    const idx = list.indexOf(reviewingVideoId.value)
     if (idx > 0) {
-      reviewingVideoId.value = videoHistory.value[idx - 1]
+      reviewingVideoId.value = list[idx - 1]
     }
   } else {
-    // Go to the most recently completed video
-    reviewingVideoId.value = videoHistory.value[videoHistory.value.length - 1]
+    // Jump to the most recent item (last in session history, or last completed)
+    reviewingVideoId.value = list[list.length - 1]
   }
 }
 
