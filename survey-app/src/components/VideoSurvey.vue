@@ -389,8 +389,8 @@ const responses = ref({
 const currentLikertIndex = ref(0)
 const currentAtomicIndex = ref(0)
 const showAtomicFacts = ref(false)
-const autoAdvanceLikert = ref(false)
-const autoAdvanceAtomic = ref(false)
+const autoAdvanceLikert = ref(true)
+const autoAdvanceAtomic = ref(true)
 
 // Auto-save functionality
 let saveTimeout = null
