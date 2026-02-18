@@ -1,75 +1,40 @@
-The time was about 6:03 p.m.
-The date was Wednesday, March 20, 2024.
-Officers were assigned to District A1.
-District A1 is downtown.
-Officers responded to the area of Washington Street and Winter Street.
-The response was for a report of a vandalism in progress.
-We were advised that five suspects were seen.
-We were advised the suspects were spray painting a box truck.
-We were advised the suspects were spray painting multiple buildings.
-We were provided a description of the suspects.
-We observed the suspects walking down Washington Street.
-The suspects were walking towards Neyland Street.
-Officers approached the group.
-One suspect began to run.
-A foot pursuit ensued.
-Officers were quickly able to stop the running suspect.
-Officers placed the running suspect into handcuffs.
-The other four suspects were arrested without incident.
-One individual was identified as Dion Weatherspoon Crosby.
-Dion Weatherspoon Crosby is 31 years old.
-Dion Weatherspoon Crosby is of Roxbury.
-One individual was identified as Richard Hortus.
-Richard Hortus is 27 years old.
-Richard Hortus is of Roxbury.
-One individual was identified as Nolan Smith.
-Nolan Smith is 19 years old.
-Nolan Smith is of Marshfield.
-One individual was identified as Matthew Hauser.
-Matthew Hauser is 27 years old.
-Matthew Hauser is of Boston.
-One individual was identified as Alexander Quinones.
-Alexander Quinones is 25 years old.
-Alexander Quinones is of Dorchester.
-I instructed a suspect to take his bag off.
-I instructed a suspect to place his hands behind his back.
-I asked if the suspect had anything on him.
-I specifically inquired about knives.
-I specifically inquired about sharp objects.
-I made the inquiry to ensure officer safety.
-The suspect stated he did not think so.
-I explicitly advised the individual, "You're under arrest."
-We coordinated transport.
-We confirmed unit 699 was on scene.
-One suspect identified himself as "Matt."
-"Matt" stated his age as 27.
-Another suspect identified as "Twin."
-"Twin" stated his last name was "Alex."
-A third suspect confirmed his name was "Richard."
-An officer on scene identified one of the detained individuals.
-The officer identified the individual as the specific suspect who completed "two spray paints."
-The officer noted that a picture had been taken of that suspect.
-Another suspect was described as a "white kid."
-This suspect was identified as having a camera.
-This suspect was identified as videotaping the incident.
-The suspects questioned why they were being detained.
-The suspects asked for details.
-I informed them they were under arrest for tagging property.
-I explained that probable cause was already established.
-I noted they were observed walking down the street.
-I noted they were observed drinking alcohol.
-I verbally provided Miranda warnings.
-I stated, "You have the right to remain silent."
-I asked if they understood.
-I advised them that no one wanted them to incriminate themselves.
-We secured the suspects' property.
-The secured property included phones.
-The secured property included wallets.
-The secured property included keys.
-The secured property included a blue bag.
-We checked the property for weapons.
-We checked the property for contraband.
-I advised the suspects to remain still during transport.
-All five suspects were placed under arrest.
-The suspects were charged with defacement of property.
-The suspects were subsequently arraigned in Boston Municipal Court.
+I arrived at the location identified as Washington Beach.
+I ordered an individual to remove his bag.
+I ordered an individual to place his hands behind his back.
+I placed the individual into custody.
+I asked the subject if he had anything on him.
+I specifically inquired about knives or sharp objects.
+The subject replied that he did not think he had anything on him.
+The subject was informed that he was under arrest.
+Another subject on the scene was identified as Matt.
+Matt stated he was 27 years old.
+Matt informed us that he was in possession of a crossbow.
+Officers on the scene confirmed the detention of multiple individuals.
+Officers noted that cuffs were on several subjects.
+An officer identified a "white kid" with a camera.
+An officer identified the "white kid" as the individual who had done "two spray paints."
+An officer stated the "white kid" took a picture of the spray painting.
+I informed the subjects that they were being detained regarding tagging property.
+I stated that I had probable cause.
+I stated the probable cause was because they were "walking down the street drinking alcohol."
+The subjects demanded to know specific details about the property in question.
+I advised the subjects that we were not going to debate the matter on the street.
+I advised the subjects that the matter would be addressed back at the station.
+I advised the subjects of their Miranda rights.
+I specifically stated, "You have the right to remain silent."
+I asked the subjects if they understood that no one wanted them to incriminate themselves.
+I collected identification information from the group.
+One individual identified himself as "Twin."
+The individual identified as "Twin" gave the last name "Alex."
+Another individual identified himself as "Richard."
+A third individual identified himself as "NOLA."
+We collected evidence.
+We collected personal property.
+The collected property included a blue bag.
+The collected property included a phone.
+I advised the subjects that items such as weapons, phones, wallets, and keys would be placed in property bags.
+I advised the subjects that these items would be kept separate from them during transport.
+One subject requested "lamb over rice" with white sauce from Halal Guys.
+I confirmed that all property would be transported back to the station.
+The subjects were secured for transport.
+I verified that the cruiser was locked.

@@ -1,59 +1,40 @@
-The date of the incident was Sunday, March 3, 2024.
-The time was approximately 12:52 a.m.
-I was with other officers from the Boston Police Anticrime Unit.
-The unit is based in Roxbury.
-I was on routine patrol.
-I was in the area of Hampton Street and Melnea Cass.
-We observed an unregistered vehicle.
-The vehicle was in violation of auto laws.
-We initiated a traffic stop.
-The vehicle halted at the intersection of Albany and Hampton Street.
-I engaged with the operator.
-The operator was identified as Mario Thames.
-I asked Thames for his driver's license.
-Thames initially claimed his license was at his house.
-I questioned Thames further.
-Thames admitted he did not possess a valid license.
-Thames admitted he had lied.
-Thames stated he lied because he "didn't want to start doing that."
-I observed the license plate attached to the vehicle.
+I arrived at the incident location near the corner of Hampton and Albany Strait.
+I made contact with the driver of a vehicle.
+The driver was identified as Mario Ames [INSERT: date of birth].
+The contact was regarding a license plate.
 The license plate was not on file.
-The license plate was not real.
-Thames was ordered to exit the vehicle.
-Officers conducted an inventory search of the vehicle.
-Officers noticed the center console appeared tampered with.
-Officers noticed the center console appeared loose.
-A thorough examination revealed the handle of a firearm.
-A thorough examination revealed the slide of a firearm.
-The weapon was identified as a SCCY CPX1.
-The weapon was a 9mm caliber.
-The weapon was black and silver.
-The weapon was loaded.
-There was one bullet in the chamber.
-There were 11 rounds in the magazine.
-I asked Thames for his license to carry a firearm.
-It was determined Thames did not have a license to carry a firearm.
-Thames acknowledged the weapon.
-Thames referred to the weapon as a "grabber."
-Thames confirmed there was "one up top" in the chamber.
-Thames stated the round in the chamber was for safety precautions.
-Thames was placed under arrest.
-I read Thames his Miranda rights from a card.
-The rights included the right to remain silent.
-The rights included the right to counsel.
-Thames verbally confirmed he understood his rights.
-Thames stated, "Yes, sir."
-Thames was cooperative.
-Thames did not resist.
-Thames did not attempt to flee.
-We attempted to make a phone call to a contact Thames requested.
-We used Thames's cell phone for the call.
-The call went to voicemail.
-Thames was charged with unlawful possession of a firearm.
-Thames was charged with unlawful possession of ammunition.
-Thames was charged with possessing a high-capacity firearm.
-Thames was charged with operating without a license.
-Thames was charged with operating an unregistered vehicle.
-Thames was charged with a number plate violation to conceal identity.
-Thames was informed he was being transported to Nash Street.
-Thames was arraigned in Roxbury District Court.
+The license plate was determined to be not real.
+I asked Ames about his driver’s license.
+Ames claimed his driver's license was at his house.
+I questioned Ames further.
+Ames admitted he did not actually have a driver’s license.
+Ames stated he was driving to his mother's house.
+I asked Ames if he had any weapons, needles, or illegal items on his person.
+Ames replied, "No, sir."
+Commands were issued for Ames not to move.
+I asked Ames to provide a license to carry a firearm.
+Ames stated, "You don't have one?"
+A firearm was located.
+I asked if the gun was loaded.
+Ames confirmed, "Yes, yes, it is."
+Ames stated there was "one up top" in the chamber.
+Ames explained that having the round in the chamber was a "safety thing."
+Ames stated he wanted to be precautious.
+I advised Ames of his Miranda rights.
+I informed Ames of his right to remain silent.
+I informed Ames that anything he said could be used against him in a court of law.
+I informed Ames of his right to consult with a lawyer before answering questions.
+I informed Ames of his right to have a lawyer provided by the Commonwealth if he could not afford one.
+I asked Ames if he understood these rights.
+Ames responded, "Yes, sir."
+I explained that Ames could stop answering questions at any time.
+Ames apologized for initially lying about his license.
+Ames requested to make a phone call to his child's mother.
+Ames provided a phone number.
+I attempted to dial the number provided by Ames using his phone.
+The call was forwarded to voicemail.
+I informed Ames that he would be able to make a phone call after booking at the station.
+Ames remained cooperative throughout the encounter.
+Ames did not fight.
+Ames did not attempt to flee.
+Ames was transported to [INSERT: specific police station or district, audio mentions B2/Nash].

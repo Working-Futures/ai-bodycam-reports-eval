@@ -1,60 +1,45 @@
-The incident occurred at about 1:30 a.m.
-The date was Friday, April 26, 2024.
-Officers were assigned to District B3, Mattapan.
-Officers arrested Samil Mejia.
-Officers arrested Nicolette Park.
-The suspects were allegedly caught on a home security surveillance system.
-The surveillance system allegedly showed the suspects breaking into a vehicle.
-Officers observed the suspects walking on Morton Street.
-The suspects were walking towards Harvard Street.
-Officers stopped the suspects.
-We conducted further investigation.
-We determined that both suspects had active warrants for their arrests.
-I spoke with the male suspect.
-The male suspect was identified as Samil Mejia.
-Mejia asked, "What's up my boss?"
-Mejia stated they were homeless.
-Mejia stated they were walking from Hyde Park.
-Mejia stated they were walking to Blue Hill.
-Mejia stated they were going to sleep.
-I asked if Officer Ford had explained that we were investigating individuals breaking into cars.
-Mejia acknowledged the explanation.
-Mejia denied the accusation.
-Mejia stated, "We were not."
-The female suspect initially identified herself as "Taylor."
-The female suspect was later identified as Nicolette Park.
-Mejia claimed he had bailed out of police custody approximately four days prior.
-Mejia claimed the release occurred on a Friday.
-I conducted a check.
-The check confirmed positive WMS hits for both individuals.
-Mejia had an active felony default warrant.
-The warrant was for indecent exposure.
-The warrant was for larceny under $1,200.
-The warrant was issued on April 22nd.
-Park was found to have an active warrant.
-The warrant was for larceny over $250.
-I asked Mejia if he had any weapons or dangerous items.
-Mejia admitted, "I'm on knife, that's it."
-Mejia indicated the knife was on his person.
-I observed Park in possession of a "pipe."
-I questioned them regarding the property in their possession.
-Both suspects claimed the items belonged to them.
-The items included clothes.
-The items included shoes.
-Park stated she was going to drop items off at a friend's house.
-Needles were found inside the victim's vehicle during the break-in.
-I advised Mejia regarding the needles.
-Mejia was placed under arrest.
-Mejia was charged with breaking and entering a motor vehicle in the nighttime.
-Mejia was charged with receiving stolen property under $250.
-Mejia was charged with trespassing.
-Mejia was charged regarding the warrant.
-Park was placed under arrest.
-Park was charged with breaking and entering a motor vehicle in the nighttime.
-Park was charged with receiving stolen property.
-Park was charged with possession of burglarious tools.
-Park was charged with trespassing.
-Park was charged regarding her warrant.
-Mejia complied with the arrest.
-Mejia extinguished his cigarette.
-Mejia stated, "Okay, okay. Come with us."
+I made contact with two individuals.
+One individual was a male identified as Taylor.
+The male also provided the first name Samil.
+One individual was a female identified as Zelda.
+The contact was regarding an investigation involving individuals running into cars.
+Taylor denied the allegations.
+Taylor stated they were a homeless couple.
+Taylor stated they were walking from Hyde Park to Blue Hill.
+Taylor stated they were walking to find a place to sleep.
+He informed me that he had recently bailed out of custody.
+He stated he had his release papers.
+I asked for his identification details.
+He spelled his first name as S-A-M-I-L [INSERT: Last Name].
+He indicated his age was 35.
+I asked for an address.
+He provided the number 580 [INSERT: Street Name/Unit Number].
+I conducted a check on both individuals.
+I confirmed a positive WMS hit for the female subject.
+The WMS hit for the female subject was for a felony default warrant.
+The warrant for the female subject included a charge for indecent exposure.
+I confirmed that Samil had an active warrant.
+Samil's warrant was for Breaking and Entering Nighttime.
+Samil's warrant was for Larceny Under.
+Samil's warrant dated from April 22nd.
+I informed Samil of the active warrant.
+I noted that the warrant was relatively new.
+Samil had previously claimed that he had cleared his status.
+I asked Samil if he possessed any weapons.
+I asked Samil if he possessed any stolen items.
+He denied having stolen property.
+He admitted, "I'm on knife."
+He indicated the knife's location on his person.
+I asked if I could check their bags to see if there was anything stolen.
+Samil provided consent to check the bags.
+Samil stated, "Yes, brother."
+Samil pointed out a pipe in his bag.
+Samil referred to the pipe as a "stamp."
+I advised Samil regarding the investigation into the car break-ins.
+I stated that if he was going to break into cars, he should not drop needles inside them.
+I advised both parties that they had to come with us due to the warrants.
+Both individuals complied with the arrest.
+Both individuals complied without resistance.
+I allowed them to finish their cigarettes.
+I allowed them to exchange a kiss.
+I took them into custody.

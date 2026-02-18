@@ -1,33 +1,32 @@
-The incident occurred on Friday, February 17, 2023.
-The incident occurred at approximately [INSERT: Time of incident].
-Officers involved were from the Boston Housing Police.
-Members of the Boston Police Gang Unit were involved.
-Officers attempted to make contact with a suspect.
-The suspect was a 15-year-old juvenile male.
-Officers approached the suspect to speak with him.
-The suspect fled on foot.
-The suspect clutched his waist while fleeing.
-Officers gave chase.
-Officers caught the suspect.
-Officers took the suspect into custody.
-The suspect repeatedly asked to be let up during apprehension.
-Officers instructed the suspect to relax.
-Officers ensured the suspect was handcuffed.
-Officers assisted the suspect after he was handcuffed.
-An officer demanded the suspect’s license to carry.
-The suspect stated, "But I don't have it."
-The suspect indicated the location of the weapon.
-The suspect said, "Right here."
-The object the suspect clutched was identified as a Taurus G2C 9mm handgun.
-The firearm was fully loaded.
-The firearm had one round in the chamber.
-The firearm had 12 rounds in the magazine.
-The apprehension occurred in the vicinity of the rear of 275 Center.
-The apprehension occurred in the vicinity of the rear of 50 Bickford.
-Officers coordinated transport to District 2.
-It was determined the scene was not safe to open the door during transport.
-It was determined the scene was not safe to let the suspect out at the immediate location.
-The juvenile suspect was charged with unlawful possession of a firearm.
-The juvenile suspect was charged with unlawful possession of a large capacity firearm.
-The juvenile suspect was charged with unlawful possession of ammunition.
-The juvenile suspect was charged with trespassing.
+I was present at the rear of 275 Center on [INSERT: Date and Time].
+Officer Ames was present at the rear of 275 Center on [INSERT: Date and Time].
+An officer advised that we had a subject right behind us.
+The subject was on the ground.
+The subject asked to be let up.
+I instructed the subject to relax.
+I explained that the subject needed to be cuffed before we would let him up.
+I demanded the subject’s license to carry.
+The subject responded, "But I don't have it."
+Another officer confirmed, "You don't have it?"
+The subject was secured.
+I instructed Officer Bert to sit the subject up.
+We coordinated via radio channel 13.
+We coordinated regarding transport to District 2.
+An officer on scene made a remark regarding the subject.
+The officer remarked, "he walked by me in his pocket."
+We confirmed that we had secured the object in question.
+The subject asked to be let out again.
+I advised the subject to relax.
+I advised the subject to not get worked up.
+I noted that the scene was safe.
+I noted that the subject was being recorded on body-worn camera.
+A gun was recovered.
+The gun was inspected.
+The gun was found to be fully loaded.
+The gun had one round in the chamber.
+The gun had 12 rounds in the magazine.
+The suspect was identified as a 15-year-old juvenile.
+The suspect was charged with unlawful possession of a firearm.
+The suspect was charged with unlawful possession of a large capacity firearm.
+The suspect was charged with unlawful possession of ammunition.
+The suspect was charged with trespassing.

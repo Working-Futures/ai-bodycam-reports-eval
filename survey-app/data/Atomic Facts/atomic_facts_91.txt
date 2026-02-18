@@ -1,33 +1,34 @@
-The incident occurred on [INSERT: Date/Time].
-The incident occurred at [INSERT: Location].
-Officers attempted to detain a suspect.
-The suspect was later identified as Dupina.
-A struggle ensued.
-Dupina attempted to resist officers.
-I commanded the suspect to provide his hand during the altercation.
-I warned the suspect of the use of force if he did not comply.
-Officers repeatedly instructed Dupina to "relax."
-Officers repeatedly instructed Dupina to "let go."
-It was observed that the suspect was holding a plastic bag during the struggle.
-The plastic bag appeared to contain drugs.
-Officers were able to handcuff the suspect.
-Officers recovered the plastic bag of suspected drugs from the suspect's hand.
-Dupina was secured.
-Dupina was placed under arrest.
-Dupina stated, "I smoked."
-Dupina stated, "I'm high."
-Dupina stated, "I'm an addict."
-I advised dispatch via Radio 4971 that drugs were recovered.
-I advised dispatch via Radio 4971 that the suspect was in custody.
-I requested a tow for the vehicle via Radio 4971.
-Dupina alleged that I grabbed his genitals.
-Dupina repeatedly asked why he was being pulled over or arrested.
-Officers conducted a motor vehicle inventory search.
-We recovered a pill bottle.
-The pill bottle contained miscellaneous pills.
-We recovered multiple rounds of live ammunition.
-Dupina was charged with unlawful possession of ammunition.
-Dupina was charged with possession to distribute Class B.
-Dupina was charged with possession with intent to distribute Class E.
-Dupina was charged with resisting arrest.
-Dupina was subsequently arraigned in Roxbury District Court.
+I was involved in a struggle with [INSERT: suspect name].
+I told [INSERT: suspect name], “I’m gonna punch you if you don’t give me your hand.”
+I ordered him to give me his hand multiple times.
+The struggle continued.
+I told him to relax.
+I told him to let go.
+I stated, “It’s over.”
+I asked if anyone had handcuffs.
+I observed that there was already a handcuff on one of his hands.
+I continued to command him to release his hands.
+I continued to command him to stop.
+I stated, “He has a bag of drugs on him.”
+I contacted dispatch via radio (4971).
+I reported, “We have drugs recovered.”
+I advised that the individual was going to be in custody.
+I requested a tow truck.
+I identified a pair of handcuffs at the scene as mine.
+I showed the suspect the recovered evidence.
+I stated, “This was in your hand, buddy.”
+I informed him, “You’re under arrest.”
+The suspect responded, “Okay, that’s fine.”
+The suspect admitted, “I smoked.”
+The suspect admitted, “I’m high.”
+The suspect admitted, “I’m an addict.”
+I told him hopefully we would be able to get him some help for that.
+I asked the suspect, “Grab my fucking balls, huh?”
+I stated, “You grab my fucking nuts.”
+The suspect made comments about feeling “like a grown up.”
+The suspect stated, “I ain't mad at shit.”
+The suspect claimed, “I don’t know why the fuck I’m being pulled over.”
+The suspect asked why he was being stopped.
+The suspect asserted that there was nothing in the back of his wagon.
+The suspect asserted that there was nothing on him.
+The suspect repeatedly asked, "What am I being arrested for?"

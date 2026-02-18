@@ -1,59 +1,40 @@
-It was about 12:31 a.m. on Sunday, March 31st, 2024.
-Officers were assigned to the anti-crime unit of District C-6, South Boston.
-Officers arrested Billy Huynh.
-Billy Huynh is 20 years old.
-Billy Huynh is of Boston.
-Officers arrested Christopher Jollymore.
-Christopher Jollymore is 40 years old.
-Christopher Jollymore is of Boston.
-Officers were made aware by Boston police operations of a reported observation.
-The report stated three suspects were observed cutting a lock on a moped.
-The observation occurred in the area of Gavin Way and O'Callaghan Way.
-Officers arrived at the scene.
-Officers observed two suspects operating two mopeds.
-Officers observed a third suspect walking a stolen moped.
-Officers told the suspects to stop.
-Jollymore was walking the moped.
-Jollymore pushed the moped at officers.
-Jollymore fled on foot.
-A foot pursuit ensued.
-Huynh told the fleeing suspect to get on the back of his moped.
-One officer grabbed Jollymore on the back of the moped.
-Huynh accelerated the moped.
-The operator refused to stop.
-The officer was dragged by the moped.
-The officer was dragged until the rear suspect was removed.
-A violent struggle ensued.
-Officers ordered the suspect to stop fighting.
-Officers ordered the suspect to put his hands behind his back.
-The suspect verbally denied resisting.
-Officers stated the suspect was resisting.
-Responding officers assisted the initial officers.
-The suspect was placed into handcuffs.
-Officers observed the operator of the moped crash into a vehicle.
-Officers observed the operator attempt to flee.
-Officers placed the operator into handcuffs.
-The operator was handcuffed without further incident.
-The third suspect fled the scene.
-Officers recovered the stolen moped.
-Officers returned the moped to the owner.
-The owner was present at the scene.
-Jollymore was in custody.
-Jollymore asked why he was stopped.
-Jollymore claimed he stopped when told.
-I explained that we received a call that someone was stealing a bike.
-I explained that the suspects took off.
-I noted that the scooter at the scene was the one the suspects were trying to steal.
-Jollymore identified himself as Christopher Jollymore.
-Jollymore stated he had no warrants.
-Jollymore complained about the handcuffs.
-Officers checked the handcuffs.
-Officers confirmed they could fit a finger inside the handcuffs.
-Officers confirmed the handcuffs were not too tight.
-Both suspects were placed under arrest.
-Both suspects were charged with larceny of a motor vehicle.
-Both suspects were charged with destruction of property.
-Both suspects were charged with disturbing the peace.
-Both suspects were charged with assault and battery on a police officer.
-Both suspects were charged with resisting arrest.
-A wagon was requested for transport.
+I advised the suspect that he was under arrest.
+I ordered the suspect to put his hands behind his back.
+The suspect was later identified as Christopher Jollymore.
+The suspect was told to stop fighting.
+Jollymore repeatedly stated, "I'm not resisting."
+I observed that Jollymore was resisting.
+I informed Jollymore that he was resisting.
+Commands were given to "Don't move."
+Jollymore attempted to stand up multiple times.
+Officers on the scene confirmed that two suspects were in custody.
+Officers on the scene confirmed that one suspect remained outstanding.
+I questioned Jollymore regarding why he was running.
+Jollymore denied running.
+Jollymore stated, "I stopped when you told me to stop."
+I advised Jollymore that he had been running.
+Officers confirmed the suspects matched the description of individuals in dark clothing.
+Officers confirmed the description included one individual possessing a backpack.
+Officers confirmed the description included one individual with a silver moped.
+A scooter was located at the scene.
+Officers explained to Jollymore that we received a call that someone was stealing a bike.
+Officers explained to Jollymore that the suspects took off.
+Officers explained that the suspects taking off required officers to tackle the subject.
+Jollymore identified a backpack at the scene as his own.
+Officers identified a bike present at the scene.
+Officers identified the bike as the property the suspects were trying to steal.
+Jollymore complained of discomfort regarding his left wrist during the detention.
+Jollymore requested the handcuffs be loosened.
+An officer checked the restraints.
+An officer advised Jollymore that he could fit his finger through the handcuffs.
+An officer advised Jollymore that the handcuffs were not too tight.
+Jollymore mentioned his "left one's bad."
+Jollymore was referring to his foot or leg.
+Jollymore was advised he would be placed in a wagon for transport.
+The suspect was asked for his identification.
+The suspect provided the name Christopher Jollymore.
+The suspect stated he did not have warrants.
+I asked Jollymore, "What's in here?" regarding items in his possession.
+Jollymore identified the items as his keys.
+[INSERT: whether Miranda rights were read] is not present in the audio recording.
+The interaction concluded with preparations for transport.

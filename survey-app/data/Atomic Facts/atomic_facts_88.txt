@@ -1,58 +1,56 @@
-It was about 6:58 p.m.
-The date was Thursday, April 18, 2024.
-Members of the District D-14 Allston-Brighton Drug Control Unit were present.
-Members were conducting an ongoing drug investigation.
-The investigation was in the area of 1202 Commonwealth Avenue.
-Officers observed a male individual.
-The male individual was later identified as Jose Reyes Jr.
-Reyes was standing outside.
-Reyes was looking at inbound traffic.
-A motor vehicle stopped in front of Reyes.
-The front passenger exited the vehicle.
-The two individuals engaged in conversation.
-The two individuals were observed handing unknown items to one another.
-Officers believed a street-level drug transaction had occurred.
-Officers inquired about the vehicle's registration.
-The vehicle's registration was revoked.
-Officers requested the assistance of a marked cruiser.
-The request was made to conduct a traffic stop.
-Officers approached the motor vehicle.
-Officers advised the occupants of the reason for the stop.
-Officers ordered the occupants to exit the vehicle.
-Officers stated the vehicle needed to be towed due to the revoked registration status.
-I approached Reyes.
-I asked Reyes for his identification.
-Reyes identified himself as Jose.
-I advised Reyes of his Miranda rights.
-Reyes subsequently engaged in conversation.
-Reyes was asked if he had any weapons on his person.
-Reyes admitted, "I got a knife on me."
-A knife was located.
-The knife was secured.
-Reyes denied engaging in a drug transaction.
-Reyes stated he just saw a friend named Adam.
-Reyes questioned why he was being detained.
-Reyes questioned why officers were searching the vehicle.
-Reyes questioned why officers were searching the glove box.
-Reyes admitted, "You will find some weed in the middle console and a ball."
-Officers investigated the vehicle further.
-Officers recovered a firearm.
-Officers recovered one magazine loaded with eight rounds.
-Officers recovered a second empty magazine.
-Officers recovered a box of 42 rounds of 9mm ammunition.
-The firearm was determined to be a Smith & Wesson M&P Shield.
-Reyes was asked why the firearm was in the glove box.
-Reyes claimed the firearm belonged to his nephew.
-Reyes claimed his nephew lives in Vermont.
-Reyes stated the nephew had been in the car a few months prior.
-Reyes confirmed he did not have a license to carry a firearm.
-Reyes was placed under arrest.
-Reyes was charged with unlawful possession of a firearm.
-Reyes was charged with unlawful possession of ammunition.
-Reyes was charged with distribution of Class E.
-The incident occurred in the area of [INSERT: specific location of the stop if different from 1202 Commonwealth Ave].
-The incident was referenced as a stop at 300.
-Reyes continued to deny knowledge of the firearm's presence.
-Reyes continued to deny knowledge of the registration issues.
-Reyes insisted the vehicle matters were a mix-up with the registry.
-Reyes insisted the insurance matters were a mix-up with the registry.
+I am TechMunition Officer Hines.
+I approached the subject vehicle.
+I made contact with the driver.
+The driver was identified as Jose.
+I asked Jose where he was coming from.
+Jose provided vague answers regarding where he was coming from.
+I informed Jose that he was being detained.
+I informed Jose the detention was pursuant to a drug investigation.
+I informed Jose the investigation involved an observed transaction.
+I asked Jose if he had any weapons.
+Jose admitted, "I got a knife on me."
+Jose indicated the knife was "underneath."
+I instructed Jose not to reach for the knife.
+I secured the scene.
+I advised Jose of his Miranda rights.
+I advised Jose he had the right to remain silent.
+I advised Jose that anything he said could be used against him.
+I advised Jose he had the right to an attorney.
+Jose indicated he understood his rights.
+Jose chose to speak.
+Jose denied involvement in any drug transaction.
+Jose stated he had been visiting a friend named Adam.
+A female passenger interjected.
+The female passenger disputed the reason for the stop.
+The female passenger claimed the vehicle’s insurance was active.
+I informed the passenger that the system showed the registration/insurance as revoked.
+Another officer asked Jose if he consented to a search of the vehicle.
+Jose replied, "No" regarding the search consent.
+The officer informed Jose that the vehicle would be checked.
+The officer stated the vehicle check was because Jose's account did not match information from the other party.
+The officer noted the other party was involved in the alleged transaction.
+The female passenger protested the search of her purse.
+The female passenger protested the search of the glove box.
+The female passenger stated, "You will find some weed in the middle console and a ball."
+Jose objected to the search.
+Jose stated officers needed legal consent for the search.
+Officers located a firearm in the vehicle.
+The firearm was located in the glove box.
+Jose was placed in handcuffs.
+Jose asked why he was being arrested.
+Jose stated he was not resisting.
+I demanded Jose's license to carry a firearm.
+Jose admitted he did not have a license to carry a firearm.
+Jose was asked why the firearm was in the glove box.
+Jose stated the firearm belonged to his nephew.
+Jose stated his nephew lives in Vermont.
+Jose stated his nephew had visited a few months prior.
+Jose admitted he had been driving around with the firearm in the car.
+Jose stated he had been driving with the firearm for a couple of months.
+I again advised the subject of his Miranda warnings.
+I explained his right to remain silent.
+I explained his right to counsel before asking further questions.
+Jose confirmed he understood his rights.
+Jose continued to speak.
+Jose reiterated that the firearm belonged to his nephew.
+Officers prepared to transport the subject.

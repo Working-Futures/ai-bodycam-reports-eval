@@ -1,43 +1,42 @@
-It was approximately 6:35 p.m. on Sunday, February 25, 2024.
-I am an officer assigned to District C-6, South Boston.
-Other officers were assigned to District C-6, South Boston.
-I was dispatched to 22 Liberty Drive.
-The dispatch was for reports of vandalism in progress.
 I arrived at the scene.
-We were informed that the suspect is named David Gong.
-We were informed that David Gong is 33 years old.
-We were informed that David Gong is of Newton.
-We were informed that David Gong had arrived at the establishment in an intoxicated state.
-I spoke with the bartender named Michael.
-Michael stated that Gong sat at the bar.
-Michael stated that Gong appeared clearly intoxicated.
-Michael advised Gong that he could not serve him alcohol.
-Michael offered Gong food.
-Michael offered Gong water.
-Gong threw his water at the bar.
-Gong proceeded to the restroom.
-I interviewed the Assistant General Manager named Philippe [INSERT: Last Name].
-Philippe [INSERT: Last Name] confirmed that Gong had been removed from the premises in the past.
-Philippe [INSERT: Last Name] stated the past removal was for drinking outside alcohol.
-Philippe [INSERT: Last Name] stated that Gong entered the restroom.
-Philippe [INSERT: Last Name] stated that Gong engaged in destructive behavior inside the restroom.
-Gong exited the stall.
-Gong informed a staff member named Daniela that there was a fire in the bathroom.
-Philippe [INSERT: Last Name] entered the restroom.
-Philippe [INSERT: Last Name] observed a stack of paper towels inside the trash barrel.
-Philippe [INSERT: Last Name] observed that the paper towels had been lit on fire.
-Philippe [INSERT: Last Name] began throwing water on the flames.
-The incident resulted in damage to the trash barrel.
-The incident resulted in damage to the lid.
-The incident resulted in damage to the faucet.
-Boston Fire Department responded to the scene.
-Boston Fire Department extinguished the fire.
-Officers located Gong outside the establishment.
-We placed David Gong under arrest.
-David Gong is charged with attempted arson.
-David Gong is charged with destruction of property.
-David Gong is charged with burning of a public building.
-David Gong is charged with burning of personal property.
-David Gong is charged with attempt to burn a public building.
-David Gong is charged with attempted arson of a dwelling house.
-David Gong is charged with malicious destruction of property.
+I made contact with the Assistant General Manager.
+The Assistant General Manager was identified as Philippe [INSERT: last name].
+Philippe informed me that a male subject had entered the establishment.
+Philippe recognized the subject from a previous incident.
+The previous incident involved the consumption of outside alcohol.
+Philippe described the suspect as a heavy-set Asian male.
+Philippe described the suspect as being in his mid-30s.
+Philippe described the suspect as approximately 5'9".
+Philippe stated the suspect had short hair.
+Philippe stated the suspect was wearing a grayish-bluish sweater.
+Philippe stated that the suspect exited a bathroom stall.
+Philippe stated the suspect spoke to an employee named Daniela.
+Philippe stated the suspect told Daniela that there was a fire in the stall.
+Philippe stated he ran into the bathroom.
+Philippe stated he observed a stack of paper towels lit on fire.
+Philippe stated the fire was inside the trash barrel.
+Philippe stated he threw water on the flames.
+Philippe stated he extinguished the flames.
+I observed damage to the trash can.
+I observed damage to the trash can lid.
+I observed damage to the faucet.
+Philippe advised that the suspect appeared to have mental issues or was "crazy" based on his behavior.
+I spoke with the bartender.
+The bartender was identified as Michael.
+Michael stated that the suspect sat at the bar.
+Michael stated he refused to serve the suspect.
+Michael stated the refusal was due to a previous incident.
+Michael stated the suspect was drinking a "nip" inside the business during the previous incident.
+Michael reported that the suspect threw water on the bar after being refused service.
+Michael reported that the suspect proceeded to the bathroom.
+Michael corroborated the suspect's description.
+Michael stated the male was wearing jeans.
+Michael stated the male was wearing glasses.
+Michael stated the male appeared clearly intoxicated.
+Philippe noted that there are security cameras in the establishment.
+Philippe stated the cameras would likely only show the back of the suspect's head rather than his face.
+I gathered the suspect's description from the staff.
+I gathered business information from the staff.
+Personnel on scene utilized a fan.
+The fan was used to ventilate smoke from the area.
+[INSERT: Case disposition/further investigative steps]

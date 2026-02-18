@@ -1,43 +1,36 @@
-I arrived at the incident location.
-I proceeded to the front door.
-I opened the front door.
-I located a male subject.
-The subject was later identified as Mr. King [INSERT: First Name].
-I observed a firearm on Mr. King’s person.
-The firearm was tucked as if it had been in a hoodie pocket.
-I was concerned about whether the subject had self-inflicted injuries.
-I immediately seized the weapon.
-I seized the weapon to secure the scene.
-I confirmed aloud that the weapon was real.
-I confirmed aloud that the weapon was loaded.
-I decided to secure Mr. King immediately.
-I grabbed Mr. King one-handed.
-I placed Mr. King in handcuffs.
-I did not want to wake Mr. King up prior to securing him.
-Mr. King was handcuffed.
-I verified Mr. King's consciousness.
-I asked, "Sir, you with it?"
-I asked, "You know where you are?"
+I observed a firearm on the person of a male subject.
+The male subject was later identified as Mr. King.
+I noted the weapon was real.
+I noted the weapon was loaded.
+The firearm was tucked in the subject's hoodie pocket.
+I secured Mr. King one-handed.
+I did not initially want to wake Mr. King up.
+I instructed [INSERT: partner/other officer] to place Mr. King in handcuffs.
+I asked Mr. King if he was "with it."
+I asked Mr. King if he knew where he was.
 I demanded to see Mr. King's license to carry a firearm.
-I repeated the demand to see the license.
-Mr. King admitted, "I never had a license."
-I read Mr. King his Miranda warnings.
-I advised Mr. King of his right to remain silent.
+Mr. King stated, "I never had a license."
+I asked Mr. King if he had any idea what he was wearing.
+Mr. King replied, "Yeah, I do."
+I asked Mr. King for his name.
+Mr. King stated, "I don't even know what."
+I read Mr. King his Miranda rights.
+I advised Mr. King that he had the right to remain silent.
 I advised Mr. King that anything he said could be used against him in a court of law.
-I advised Mr. King of his right to consult with a lawyer before answering questions.
+I advised Mr. King that he had the right to consult with a lawyer before answering questions.
 I advised Mr. King that a lawyer would be provided by the Commonwealth if he could not afford one.
 I asked Mr. King if he understood what I told him.
-Mr. King replied, "No."
-Mr. King stated, "I don't have nothing."
-I asked Mr. King his name.
-I asked Mr. King if he knew what he was wearing.
-Mr. King gave conflicting or unclear responses.
-Officers recovered the firearm.
-The firearm was identified as a 9mm polymer 80PF940C.
-The firearm had three rounds in the magazine.
-The firearm had one round in the chamber.
-Investigation revealed Mr. King had a prior firearm conviction in 2015.
-Probable cause existed to charge Mr. King with possession of a firearm without an FID card (subsequent offense).
-Probable cause existed to charge Mr. King with possession of ammunition without an FID card.
-Probable cause existed to charge Mr. King with possession of a large capacity firearm.
-Mr. King was arraigned in Dorchester District Court.
+Mr. King answered, "No."
+I acknowledged Mr. King's response.
+I ordered for Mr. King to be removed from the scene.
+Officers recovered the weapon.
+The weapon was identified as a 9mm polymer 80PF940C.
+The weapon contained three rounds in the magazine.
+The weapon contained one round in the chamber.
+Investigation revealed that Mr. King had a prior firearm conviction.
+The prior firearm conviction occurred in 2015.
+Mr. King was placed under arrest.
+Mr. King was charged with possession of a firearm without an FID card (subsequent offense).
+Mr. King was charged with possession of ammunition without an FID card.
+Mr. King was charged with possession of a large capacity firearm.
+Mr. King was processed for arraignment at Dorchester District Court.

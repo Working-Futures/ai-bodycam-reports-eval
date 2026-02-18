@@ -1,45 +1,35 @@
-The incident occurred on Friday, September 9, 2022.
-The time of the incident was [INSERT: time of incident].
-Officers were from the Youth Violence Strike Force.
-Massachusetts State Police were present with the officers.
-We conducted a traffic stop in the area of 32 Warren Street.
-The location of the stop was in Roxbury.
-We observed the vehicle pull out.
-We observed the vehicle "skirt" its tires.
-We observed the vehicle "fly" out of the area.
-We initiated the stop based on these observations.
-We approached the vehicle.
-We observed the driver motioning towards the center console of the car.
-The driver was later identified as Tracy Young.
-Tracy Young is 31 years old.
-Tracy Young is of Lawrence.
-We recovered a SCCY CPX-1 firearm.
-The firearm was a compact 9mm.
-The firearm was fully loaded.
-There was 1 round in the chamber.
-There were 11 rounds in the magazine.
-[INSERT: how evidence was collected or stored].
-I advised Mr. Young that we were going to proceed "by the book."
-I read Mr. Young his Miranda warnings.
-I informed him that he had the right to remain silent.
-I informed him that anything he said might be used against him in a court of law.
-I informed him that he had the right to consult with a lawyer before answering questions.
-I informed him that he had the right to have a lawyer present during questioning.
-I informed him that if he could not afford an attorney, one would be provided by the Commonwealth at no cost.
-I asked if he understood these rights.
-I advised him that he could waive his rights to answer questions.
-I advised him that he could waive his rights to make a statement.
-I demanded Mr. Young’s license to carry a firearm.
-Mr. Young stated, "I have a training permit."
-I asked, "Do you have a license to carry?"
-Mr. Young complied with the questioning.
+I [INSERT: my name] was involved in an incident with a subject.
+The subject was later identified as Mr. Young.
+The incident occurred at [INSERT: specific location].
+The subject expressed a need to call his girlfriend at the beginning of the interaction.
+I informed the subject that we were going to proceed "by the book."
+I located my Miranda warning card.
+I read the subject his rights.
+I advised the subject of his right to remain silent.
+I advised the subject that anything he said may be used against him in a court of law.
+I advised the subject of his right to consult with a lawyer before answering questions.
+I advised the subject of his right to have a lawyer present during questioning.
+I informed the subject that if he could not afford an attorney, one would be provided by the Commonwealth at no cost.
+I explained that the subject could waive these rights to answer questions or make statements.
+I asked the subject if he understood what I had told him.
+I demanded the subject's license to carry a firearm.
+Mr. Young initially stated, "I have a training permit."
+I questioned the validity of this statement.
+I asked the subject again, "Do you have a license to carry?"
 Mr. Young admitted, "No, I don't."
-We discussed his identification.
-Mr. Young indicated he did not know his social security number.
-Mr. Young stated his ID was in his wallet.
-Mr. Young was placed under arrest on the scene.
-[INSERT: details regarding transport of suspect].
-He was charged with unlawful possession of a firearm.
-He was charged with unlawful possession of ammunition.
-He was charged with unlawful possession of a large-capacity feeding device.
-Mr. Young was arraigned in Roxbury District Court.
+I explained the reason for the stop.
+I stated that we were behind the subject when he pulled out.
+I stated that the subject "skirtied" his tires.
+I stated that the subject "flew out of there."
+I noted that the subject peeled out.
+I informed the subject that the driving infraction was captured on camera.
+I asked Mr. Young for his social security number or identification.
+Mr. Young stated that he did not think his ID was in the apartment.
+Mr. Young stated that his ID was in his wallet.
+I asked the subject if his name was Tracy.
+I inquired if the subject was from Lawrence.
+Mr. Young was arrested on the scene based on the investigation.
+Mr. Young was charged with unlawful possession of a firearm.
+Mr. Young was charged with unlawful possession of ammunition.
+Mr. Young was charged with unlawful possession of a large-capacity feeding device.
+Mr. Young was later arraigned in Roxbury District Court.
