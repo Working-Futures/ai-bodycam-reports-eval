@@ -1,0 +1,44 @@
+I responded to the vicinity of 157 Wash.
+I responded regarding a report of an armed robbery.
+I made contact with a male subject.
+I advised the subject about a reporting person's statement.
+The reporting person stated someone was at the location.
+The reporting person stated the person was wearing a red shirt.
+The reporting person stated the person was wearing gray pants.
+The reporting person stated the person had robbed a victim with a gun.
+The subject replied, "I didn't know that."
+The subject replied repeatedly.
+I instructed the subject to sit down.
+The subject complied with the instruction.
+I spoke with the victim.
+The victim is named [INSERT: Victim Name].
+The victim stated they initially did not see the suspect's face.
+The victim stated they observed a male standing nearby.
+The victim stated the male was wearing a red hat.
+The victim stated the male was wearing gray sweatpants.
+The victim described the suspect looking into their eyes.
+The victim described the suspect looking all around.
+The victim provided the sequence "242-050-147".
+The victim mentioned the name "Carmel."
+The victim viewed the detained subject.
+The victim positively identified the detained subject.
+The victim stated, "Yeah, that's him, yeah."
+I instructed the suspect to stand up.
+The suspect is named [INSERT: Suspect Name].
+The suspect complied with my commands.
+The suspect expressed a need to secure a phone number.
+The suspect identified the phone number as belonging to his uncle.
+I facilitated the recording of a number.
+I provided the number 857-230-9015 during the exchange.
+I informed the suspect that he was arrested.
+I informed the suspect the arrest was because of what happened.
+I informed the suspect the arrest was because of his presence at the scene.
+I inquired about the contents of the suspect's wallet.
+I asked if the suspect wished for an individual on scene to take his lighter.
+I advised the suspect that he could not have the lighter at the booking station.
+I advised the suspect that the lighter would be disposed of otherwise.
+The name "Carlos" was mentioned during the interaction.
+"Apartment 2" was mentioned during the interaction.
+These mentions were regarding the transfer of property.
+The location of the incident was identified.
+The location was identified as being in front of the Dolby.

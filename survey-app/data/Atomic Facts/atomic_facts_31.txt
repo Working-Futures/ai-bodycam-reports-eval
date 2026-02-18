@@ -1,0 +1,43 @@
+I initiated a traffic stop on a vehicle on [INSERT: Date].
+The traffic stop occurred at approximately [INSERT: Time].
+The traffic stop occurred at [INSERT: Location].
+The basis for the stop was a driver's side brake light.
+The brake light was out.
+I made contact with the operator.
+The operator was identified as [INSERT: Suspect Name].
+I requested the operator's registration.
+I requested the operator's proof of insurance.
+The driver stated he did not have physical proof of insurance on him.
+The driver stated the proof of insurance was accessible "in the app."
+I instructed the driver to pull up the proof of insurance.
+I instructed the driver to show the proof of insurance to my partners.
+I informed the driver regarding the brake light defect.
+The driver stated he was unaware of the brake light defect.
+I instructed the driver to exit the vehicle.
+I asked the driver if he had anything "crazy" on his person.
+The driver denied having anything "crazy" on his person.
+I advised the driver he could step out of the vehicle voluntarily.
+I advised the driver I would remove him if he did not volunteer.
+The driver exited the vehicle.
+I conducted a pat-down search of the driver.
+The purpose of the search was to ensure the driver possessed no objects that could "stick" officers.
+The purpose of the search was to ensure the driver possessed no objects that could "poke" officers.
+I positioned my vehicle behind the driver's vehicle.
+I observed the driver pulling his hood up.
+I noted that the driver appeared nervous.
+I noted that the driver's heart was beating rapidly.
+I explained my observations to the driver.
+The driver disputed my account.
+The driver stated his hood was already on.
+The driver stated he was attempting to fasten his seatbelt when I observed him.
+I conducted a search of the vehicle.
+The driver questioned the necessity of the search.
+I reiterated that the driver's behavior regarding the hood provided the reason for the investigation.
+I reiterated that the driver's visible nervousness provided the reason for the investigation.
+The search of the vehicle yielded negative results.
+No contraband was found during the search.
+No individuals of interest were found during the search.
+Another officer was on scene.
+Another officer indicated that a records check of the individual showed "nothing."
+I informed the driver we would not be arresting him.
+I informed the driver I would issue a civil citation for the infraction.

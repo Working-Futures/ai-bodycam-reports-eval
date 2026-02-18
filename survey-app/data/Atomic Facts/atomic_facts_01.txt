@@ -1,0 +1,46 @@
+I conducted a motor vehicle stop of a suspect.
+The suspect was identified as [INSERT: suspect name].
+I observed a marked lane violation.
+I determined that the vehicle’s registration was revoked.
+I determined that the vehicle’s registration was suspended.
+The registration status was due to a lack of insurance.
+I informed the suspect that the vehicle would be towed.
+I stated that the tow was per department protocol.
+I explained the process for the suspect to retrieve the vehicle later from the station.
+I advised the suspect that he would be required to appear in court.
+I advised the suspect the court appearance was to address the charge of operating a vehicle without proper registration.
+I began an inventory search of the vehicle.
+The inventory search was in accordance with department policy.
+The inventory search was conducted prior to the tow.
+The purpose of the search was to document the vehicle's contents.
+The purpose of the search was to protect against claims of lost or stolen property.
+I explained to the suspect that this inventory was a standard administrative procedure.
+I explained to the suspect that the inventory was not a search requiring his consent.
+A firearm was located within the vehicle during the inventory.
+The firearm was located near the center console area.
+I requested via radio that a supervisor respond to the scene.
+I requested via radio that detectives respond to the scene.
+I requested a Miranda warning card be brought to my location.
+I read the suspect his Miranda warnings from a card.
+The suspect confirmed that he understood his rights.
+I made a formal demand for the suspect’s License to Carry (LTC) a firearm.
+The suspect stated that he did not have an LTC.
+I placed the suspect under arrest.
+The arrest was based on the presence of the firearm.
+The arrest was based on the suspect's lack of a valid license to possess the firearm.
+The suspect complied with my commands.
+The suspect did not resist.
+The suspect did not attempt to flee.
+The suspect had physical limitations.
+The suspect had an inability to walk.
+I assisted the suspect in moving from the vehicle into his wheelchair.
+I secured the suspect using "double cuffs."
+I secured the suspect with his hands behind his back.
+I secured the suspect in this manner for his safety and comfort given his mobility needs.
+I informed the suspect that the entire interaction was being recorded on my body-worn camera.
+The firearm was collected as evidence.
+The firearm was [INSERT: method of storage or transport].
+I remained on scene at [INSERT: exact location near Dorchester Street].
+I remained on scene to complete the vehicle inventory.
+I remained on scene to await the arrival of the Patrol Supervisor.
+I remained on scene to await the arrival of detectives.

@@ -1,0 +1,43 @@
+I was on scene on [INSERT: Date/Time].
+I was at [INSERT: Location].
+I was with [INSERT: Assisting Officer Name].
+I was assisting a male subject.
+The subject was [INSERT: Subject Name].
+I informed the subject that we had an ambulance en route.
+I informed the subject that we intended to take care of him.
+I observed that the subject was behaving erratically.
+I stated that the subject was "not being normal."
+I instructed the subject to sit down.
+I gave the instruction to ensure the subject did not hit his head.
+I gave the instruction to ensure the subject did not fall.
+An assisting officer advised to place the subject on the ground.
+An assisting officer advised to place the subject in handcuffs.
+I managed the subject.
+Instructions were given to undo the subject's belt.
+The subject became highly agitated.
+The subject became combative.
+The subject screamed profanities.
+The subject screamed racial slurs.
+The subject demanded, "Help me up."
+The subject demanded, "Let me go."
+The subject made these demands repeatedly.
+The subject asked, "Why the fuck am I in cuffs?"
+The subject complained of pain.
+The subject shouted, "Ow, my dick."
+The subject accused an individual of looking at his genitals.
+Commands were given to stop.
+The subject continued to yell, "What the fuck."
+The subject struggled against detention.
+I read the subject his Miranda warnings.
+I advised the subject that he had the right to remain silent.
+I advised the subject that anything he said could be used against him in a court of law.
+I advised the subject that he had the right to consult with a lawyer before answering any questions.
+I advised the subject that if he could not afford a lawyer, one would be provided to him by the Commonwealth without cost.
+I asked the subject, "Do you understand what I've said to you?"
+I asked the subject, "Do you understand?"
+I asked the subject these questions multiple times.
+The subject did not provide an affirmative answer.
+The subject did not indicate compliance.
+The subject continued to scream, "What the fuck."
+The subject continued to scream, "Let me the fuck go."
+The subject screamed these phrases repeatedly.
