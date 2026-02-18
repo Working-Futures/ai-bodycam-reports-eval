@@ -1,7 +1,7 @@
 #!/bin/bash
 # Auto-deploy script: pulls latest from GitHub, rebuilds if changed, restarts via pm2.
 # Install: crontab -e → */5 * * * * /path/to/survey-app/deploy.sh >> /path/to/survey-app/deploy.log 2>&1
-
+# test line for commit
 # ── Configuration ────────────────────────────────────────────────────
 APP_DIR="$(cd "$(dirname "$0")" && pwd)"
 PM2_APP_NAME="survey-app"        # name shown in `pm2 list`
