@@ -1,0 +1,39 @@
+# Diarization Ablation Study - Requirements
+# Install with: pip install -r requirements.txt
+
+# Core ML
+torch>=2.0
+torchaudio>=2.0
+
+# Diarization models
+pyannote.audio>=3.1
+# For community-1 model, you also need a HuggingFace token with access to:
+#   https://huggingface.co/pyannote/speaker-diarization-3.1
+#   https://huggingface.co/pyannote/speaker-diarization-community-1
+#   https://huggingface.co/pyannote/segmentation-3.0
+
+# ASR (WhisperX - same as original pipeline)
+whisperx @ git+https://github.com/m-bain/whisperX.git
+faster-whisper>=1.0
+
+# Gemini API for narrative generation
+google-generativeai>=0.5
+
+# Analysis
+pandas>=2.0
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.3
+matplotlib>=3.7
+seaborn>=0.12
+
+# Audio processing
+librosa>=0.10
+soundfile>=0.12
+
+# Diarization evaluation
+pyannote.metrics>=3.2
+
+# Utilities
+tqdm
+jsonlines
